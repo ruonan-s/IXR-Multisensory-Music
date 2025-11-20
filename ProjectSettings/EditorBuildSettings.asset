@@ -5,9 +5,29 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/DieWithaSmile.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 0
+    path: "Assets/Samples/Meta XR Interaction \u200BSDK/81.0.0/Example Scenes/GestureExamples.unity"
+    guid: 4ee2a082a0e621b49ab01667c66f1599
+  - enabled: 0
+    path: "Assets/Samples/Meta XR Interaction \u200BSDK/81.0.0/Example Scenes/BodyPoseDetectionExamples.unity"
+    guid: 06a339ff5513d7f49a91ab90cbe194d4
+  - enabled: 0
+    path: "Assets/Samples/Meta XR Interaction \u200BSDK/81.0.0/Example Scenes/PoseExamples.unity"
+    guid: 4fe358b21fe17764db89a9ab9f202327
+  - enabled: 0
+    path: Assets/Scenes/PoseExamples.unity
+    guid: f059b282fe09b43d0a5143d84a7e7384
+  - enabled: 1
+    path: "Assets/Samples/Meta XR Interaction \u200BSDK/81.0.0/Example Scenes/HandGrabExamples.unity"
+    guid: 39ae0e546b9edc0408d3b11c6a7c2814
+  - enabled: 0
+    path: Assets/Scenes/Yellow Submarine_poke.unity
+    guid: 97cbc721633c8c141890cfc4bfcd42f6
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 9dcd96982ad4d4c47a74c0e189d57d58, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 779d0d4b378c845b7a83b336fd963048, type: 2}
   m_UseUCBPForAssetBundles: 0
