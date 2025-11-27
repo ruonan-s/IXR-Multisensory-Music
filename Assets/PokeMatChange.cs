@@ -2,35 +2,33 @@ using UnityEngine;
 
 public class PokeMatChange : MonoBehaviour
 {
-    [Header("Assign both materials manually")]
+    [Header("Assign Materials")]
     public Material originalMat;
     public Material pokeMat;
+
+    [Header("Inspector-driven properties for Poke Material")]
+    public Texture pokeBaseMap;
+    public Color pokeColor = Color.white;
 
     private Renderer rend;
     private bool isPoked = false;
 
     // Shader property names
-    private readonly string texProperty = "_MainTex";
+    private readonly string texProperty = "_BaseMap";
     private readonly string colorProperty = "_TintColor";
 
     private Texture originalTex;
-    private Texture pokeTex;
-
     private Color originalTint;
-    private Color pokeTint;
 
     void Start()
     {
         rend = GetComponent<Renderer>();
 
-        // Save current inspector-set values
+        // Save original material properties
         originalTex = originalMat.GetTexture(texProperty);
-        pokeTex = pokeMat.GetTexture(texProperty);
-
         originalTint = originalMat.GetColor(colorProperty);
-        pokeTint = pokeMat.GetColor(colorProperty);
 
-        // Start with original
+        // Start with original material
         rend.material = originalMat;
     }
 
@@ -43,16 +41,21 @@ public class PokeMatChange : MonoBehaviour
             if (isPoked)
             {
                 rend.material = pokeMat;
-                rend.material.SetTexture(texProperty, pokeTex);
-                rend.material.SetColor(colorProperty, pokeTint);
+
+                // Apply inspector-assigned properties
+                rend.material.SetTexture(texProperty, pokeBaseMap);
+                rend.material.SetColor(colorProperty, pokeColor);
             }
             else
             {
                 rend.material = originalMat;
+
+                // Restore original material properties
                 rend.material.SetTexture(texProperty, originalTex);
                 rend.material.SetColor(colorProperty, originalTint);
             }
         }
     }
 }
+
 
