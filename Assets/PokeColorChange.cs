@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PokeShaderToggle : MonoBehaviour
+public class PokeShaderToggle: MonoBehaviour
 {
     public Color pokeColor = Color.red; // 포크 색
     private Material matInstance;
@@ -12,7 +12,7 @@ public class PokeShaderToggle : MonoBehaviour
     void Start()
     {
         Renderer renderer = GetComponent<Renderer>();
-        matInstance = renderer.material; 
+        matInstance = renderer.material;
         originalColor = matInstance.GetColor(colorProperty);
     }
 
