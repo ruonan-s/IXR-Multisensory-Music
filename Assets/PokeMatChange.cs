@@ -31,7 +31,7 @@ public class PokeMatChange : MonoBehaviour
         // Start with original material
         rend.material = originalMat;
     }
-
+/*
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Finger"))
@@ -55,6 +55,14 @@ public class PokeMatChange : MonoBehaviour
                 rend.material.SetColor(colorProperty, originalTint);
             }
         }
+    }
+    */
+
+    public void changColor()
+    {
+        rend.material = pokeMat;
+        rend.material.SetTexture(texProperty, pokeBaseMap);
+        rend.material.SetColor(colorProperty, pokeColor);
     }
 }
 
