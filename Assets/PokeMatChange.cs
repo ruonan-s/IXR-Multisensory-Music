@@ -14,8 +14,8 @@ public class PokeMatChange : MonoBehaviour
     private bool isPoked = false;
 
     // Shader property names
-    private readonly string texProperty = "_BaseMap";
-    private readonly string colorProperty = "_TintColor";
+    private readonly string texProperty = "_Main Tex";
+    private readonly string colorProperty = "_Tint Color";
 
     private Texture originalTex;
     private Color originalTint;
@@ -32,7 +32,7 @@ public class PokeMatChange : MonoBehaviour
         rend.material = originalMat;
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Finger"))
         {
