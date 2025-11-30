@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f80418e955b9b4ba653dbc4837ce1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalMat: {fileID: 2100000, guid: 9233e97f2d90b6140bd24a3393b8d658, type: 2}
+  originalMat: {fileID: 2100000, guid: c77cc61d872164d4099bf4b31f505bba, type: 2}
   pokeMat: {fileID: -876546973899608171, guid: 3ddb878b2d87604428b69616f3c07b55, type: 3}
   pokeBaseMap: {fileID: 0}
   pokeColor: {r: 1, g: 1, b: 1, a: 1}
