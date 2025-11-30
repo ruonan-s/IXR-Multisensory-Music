@@ -1,0 +1,105 @@
+[{
+    "paragraph": 1,
+    "start_tms": "00:00:01,100",
+    "end_tms": "00:00:08,533",
+    "elements": [
+        {
+            "image_name": "house.png",
+            "layer": 1,
+            "interaction": "poke",
+            "scale": {
+                "scale_category": "large",
+                "scale_multiplier": 2.0
+            }
+        },
+        {
+            "image_name": "fishman.png",
+            "layer": 1,
+            "interaction": "wave",
+            "scale": {
+                "scale_category": "medium",
+                "scale_multiplier": 0.9
+            }
+        },
+        {
+            "image_name": "fishman2.png",
+            "layer": 1,
+            "interaction": "swipe",
+            "scale": {
+                "scale_category": "small",
+                "scale_multiplier": 0.35
+            }
+        },
+        {
+            "image_name": "YS_people_3.png",
+            "layer": 2,
+            "interaction": "grab",
+            "scale": {
+                "scale_category": "medium",
+                "scale_multiplier": 0.7
+            }
+        },
+        {
+            "image_name": "YS_people_5.png",
+            "layer": 2,
+            "interaction": "wave",
+            "scale": {
+                "scale_category": "large",
+                "scale_multiplier": 1.2
+            }
+        }
+    ]
+},
+{
+    "paragraph": 2,
+    "start_tms": "00:00:08,533",
+    "end_tms": "00:00:16,633",
+    "elements": [
+        {
+            "image_name": "house.png",
+            "layer": 2,
+            "interaction": "poke",
+            "scale": {
+                "scale_category": "small",
+                "scale_multiplier": 0.35
+            }
+        },
+        {
+            "image_name": "fishman.png",
+            "layer": 1,
+            "interaction": "wave",
+            "scale": {
+                "scale_category": "medium",
+                "scale_multiplier": 0.9
+            }
+        },
+        {
+            "image_name": "fishman2.png",
+            "layer": 2,
+            "interaction": "swipe",
+            "scale": {
+                "scale_category": "medium",
+                "scale_multiplier": 0.9
+            }
+        },
+        {
+            "image_name": "YS_people_3.png",
+            "layer": 2,
+            "interaction": "grab",
+            "scale": {
+                "scale_category": "medium",
+                "scale_multiplier": 0.7
+            }
+        },
+        {
+            "image_name": "YS_people_5.png",
+            "layer": 1,
+            "interaction": "wave",
+            "scale": {
+                "scale_category": "small",
+                "scale_multiplier": 0.5
+            }
+        }
+    ]
+}
+]
