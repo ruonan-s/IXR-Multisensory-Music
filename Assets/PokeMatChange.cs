@@ -20,7 +20,7 @@ public class PokeMatChange : MonoBehaviour
     private Texture originalTex;
     private Color originalTint;
 
-    void Start()
+    void Awake()
     {
         rend = GetComponent<Renderer>();
 
@@ -65,5 +65,4 @@ public class PokeMatChange : MonoBehaviour
         rend.material.SetColor(colorProperty, pokeColor);
     }
 }
-
 
