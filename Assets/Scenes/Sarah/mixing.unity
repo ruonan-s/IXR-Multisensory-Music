@@ -1865,6 +1865,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grab_listen_Interaction
       objectReference: {fileID: 0}
+    - target: {fileID: 4361457466933336493, guid: c3f9e0aa195a94737aa6188bc18524d2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481901932983758621, guid: c3f9e0aa195a94737aa6188bc18524d2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8963270627131787135, guid: c3f9e0aa195a94737aa6188bc18524d2, type: 3}
       propertyPath: m_Name
       value: asset_example
