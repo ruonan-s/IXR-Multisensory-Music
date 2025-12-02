@@ -14,8 +14,8 @@ public class PokeMatChange : MonoBehaviour
     private bool isPoked = false;
 
     // Shader property names
-    private readonly string texProperty = "_Main Tex";
-    private readonly string colorProperty = "_Tint Color";
+    private readonly string texProperty = "_Main_Tex";
+    private readonly string colorProperty = "_Tint_Color";
 
     private Texture originalTex;
     private Color originalTint;
