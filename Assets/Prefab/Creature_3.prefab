@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4983457706034153121}
   - component: {fileID: 7712454245858598149}
   m_Layer: 0
-  m_Name: Creature_3
+  m_Name: creature_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
