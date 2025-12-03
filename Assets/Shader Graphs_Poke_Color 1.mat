@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_Poke_Color
+  m_Name: Shader Graphs_Poke_Color 1
   m_Shader: {fileID: -6465566751694194690, guid: 3ddb878b2d87604428b69616f3c07b55, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -48,7 +48,7 @@ Material:
     - _Tint_Color: {r: 1, g: 0.8333333, b: 0.8650439, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &1124735781822473005
+--- !u!114 &2145325490598007485
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
