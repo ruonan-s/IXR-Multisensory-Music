@@ -3192,7 +3192,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!64 &1284935357
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3294,7 +3294,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1284935356}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 837ea1b2fabcd4cf6bde6c25540c8885, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: f587448bc528c1a47ae3447a58535f7a, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -11068,7 +11068,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2057309733}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 837ea1b2fabcd4cf6bde6c25540c8885, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: f587448bc528c1a47ae3447a58535f7a, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 833047491}
