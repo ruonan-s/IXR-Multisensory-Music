@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6270900487771151980}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.046612363, y: -0.7055688, z: 0.7055688, w: -0.046612363}
+  m_LocalRotation: {x: -0.046610292, y: -0.7055689, z: 0.7055689, w: -0.046610292}
   m_LocalPosition: {x: -14.974, y: 0.33500004, z: 4.055}
   m_LocalScale: {x: 0.13777557, y: 0.24521445, z: 0.24521445}
   m_ConstrainProportionsScale: 0
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f80418e955b9b4ba653dbc4837ce1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalMat: {fileID: 2100000, guid: 9233e97f2d90b6140bd24a3393b8d658, type: 2}
+  originalMat: {fileID: 2100000, guid: dad2a2df8f38c124486937a16c6c1bef, type: 2}
   pokeMat: {fileID: -876546973899608171, guid: 3ddb878b2d87604428b69616f3c07b55, type: 3}
-  pokeBaseMap: {fileID: 0}
-  pokeColor: {r: 1, g: 1, b: 1, a: 1}
+  pokeBaseMap: {fileID: 2800000, guid: 3beb4d474b698b8419d6b7d63de96c38, type: 3}
+  pokeColor: {r: 0.5768632, g: 0.26029426, b: 0.7735849, a: 1}

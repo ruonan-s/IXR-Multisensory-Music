@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: christmas_tree
       objectReference: {fileID: 0}
+    - target: {fileID: 6658328703622673105, guid: b838e962e169744a284698fc3f76fa3a, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6968518444525672430, guid: b838e962e169744a284698fc3f76fa3a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -57,7 +61,78 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 9079023860792601466, guid: b838e962e169744a284698fc3f76fa3a, type: 3}
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5231317677830506110, guid: b838e962e169744a284698fc3f76fa3a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6132477276410425136}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b838e962e169744a284698fc3f76fa3a, type: 3}
+--- !u!4 &6189003154320638167 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5231317677830506110, guid: b838e962e169744a284698fc3f76fa3a, type: 3}
+  m_PrefabInstance: {fileID: 2124184059923056297}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &9098369634599201083
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6189003154320638167}
+    m_Modifications:
+    - target: {fileID: 3123538181604328971, guid: 6e714cfee4e40cc46b22b3abe7f842dc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.18419999
+      objectReference: {fileID: 0}
+    - target: {fileID: 3123538181604328971, guid: 6e714cfee4e40cc46b22b3abe7f842dc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.4480001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3123538181604328971, guid: 6e714cfee4e40cc46b22b3abe7f842dc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.2966
+      objectReference: {fileID: 0}
+    - target: {fileID: 3123538181604328971, guid: 6e714cfee4e40cc46b22b3abe7f842dc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3123538181604328971, guid: 6e714cfee4e40cc46b22b3abe7f842dc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3123538181604328971, guid: 6e714cfee4e40cc46b22b3abe7f842dc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3123538181604328971, guid: 6e714cfee4e40cc46b22b3abe7f842dc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3123538181604328971, guid: 6e714cfee4e40cc46b22b3abe7f842dc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3123538181604328971, guid: 6e714cfee4e40cc46b22b3abe7f842dc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3123538181604328971, guid: 6e714cfee4e40cc46b22b3abe7f842dc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 8901984951762258951, guid: 6e714cfee4e40cc46b22b3abe7f842dc, type: 3}
+      propertyPath: m_Name
+      value: christmasTree
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b838e962e169744a284698fc3f76fa3a, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 6e714cfee4e40cc46b22b3abe7f842dc, type: 3}
+--- !u!4 &6132477276410425136 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3123538181604328971, guid: 6e714cfee4e40cc46b22b3abe7f842dc, type: 3}
+  m_PrefabInstance: {fileID: 9098369634599201083}
+  m_PrefabAsset: {fileID: 0}
