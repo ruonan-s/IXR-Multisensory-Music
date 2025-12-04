@@ -124,9 +124,13 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 7412657f979d82445898b125c026d8fc, type: 2}
+    - target: {fileID: 1736577945022134297, guid: af644588e67c22b409e4ea7545c7ace9, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2651375841662000422, guid: af644588e67c22b409e4ea7545c7ace9, type: 3}
       propertyPath: m_LocalScale.x
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2651375841662000422, guid: af644588e67c22b409e4ea7545c7ace9, type: 3}
       propertyPath: m_LocalPosition.x

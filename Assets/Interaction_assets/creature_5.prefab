@@ -205,6 +205,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2131015675815408546, guid: ff06f66766d89f747898fb3cfa32eb75, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0523
+      objectReference: {fileID: 0}
     - target: {fileID: 2198314648065924495, guid: ff06f66766d89f747898fb3cfa32eb75, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -257,6 +261,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 82f18576c6fd87044a9574971c5ae0f3, type: 2}
+    - target: {fileID: 4375918231950815592, guid: ff06f66766d89f747898fb3cfa32eb75, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0523
+      objectReference: {fileID: 0}
+    - target: {fileID: 6793900757696177994, guid: ff06f66766d89f747898fb3cfa32eb75, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.020100007
+      objectReference: {fileID: 0}
     - target: {fileID: 8777923621825595789, guid: ff06f66766d89f747898fb3cfa32eb75, type: 3}
       propertyPath: m_Name
       value: creature_5

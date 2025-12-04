@@ -222,6 +222,14 @@ PrefabInstance:
       value: changColor
       objectReference: {fileID: 0}
     - target: {fileID: 7920288025260303243, guid: d1bc14ca4533b094e9b0789998623723, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7920288025260303243, guid: d1bc14ca4533b094e9b0789998623723, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7920288025260303243, guid: d1bc14ca4533b094e9b0789998623723, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -259,6 +267,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7920288025260303243, guid: d1bc14ca4533b094e9b0789998623723, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7920288025260303243, guid: d1bc14ca4533b094e9b0789998623723, type: 3}
+      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

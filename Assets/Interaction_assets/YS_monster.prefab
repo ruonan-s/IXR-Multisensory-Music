@@ -209,9 +209,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2193600193320229760, guid: 05d3ff8803bdc8f418a115b1d425512e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.06959
+      objectReference: {fileID: 0}
     - target: {fileID: 4172726309451248967, guid: 05d3ff8803bdc8f418a115b1d425512e, type: 3}
       propertyPath: m_Name
       value: YS_monster
+      objectReference: {fileID: 0}
+    - target: {fileID: 6749506100949438312, guid: 05d3ff8803bdc8f418a115b1d425512e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.00281
       objectReference: {fileID: 0}
     - target: {fileID: 6825215099966955845, guid: 05d3ff8803bdc8f418a115b1d425512e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -265,6 +273,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: e742247b534d0704392609cbfefe0c63, type: 2}
+    - target: {fileID: 8972174364421983650, guid: 05d3ff8803bdc8f418a115b1d425512e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.00281
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 4058192200391567523, guid: 05d3ff8803bdc8f418a115b1d425512e, type: 3}

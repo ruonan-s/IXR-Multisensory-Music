@@ -1030,6 +1030,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: YS_Coral_5
       objectReference: {fileID: 0}
+    - target: {fileID: 2897309175779905183, guid: a43a0684ad6325c4e86340ed5499929c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3100702961129254095, guid: a43a0684ad6325c4e86340ed5499929c, type: 3}
       propertyPath: m_IsActive
       value: 1

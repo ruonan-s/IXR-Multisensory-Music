@@ -209,6 +209,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: YS_fish_6
       objectReference: {fileID: 0}
+    - target: {fileID: 3783084270310895224, guid: 19565f57e22c6cc4f8b82b29317827d3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4774041870126163633, guid: 19565f57e22c6cc4f8b82b29317827d3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5231775490863280514, guid: 19565f57e22c6cc4f8b82b29317827d3, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -216,6 +224,14 @@ PrefabInstance:
     - target: {fileID: 5231775490863280514, guid: 19565f57e22c6cc4f8b82b29317827d3, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: changColor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5658178396256300832, guid: 19565f57e22c6cc4f8b82b29317827d3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6229214774758357082, guid: 19565f57e22c6cc4f8b82b29317827d3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6352131480978197510, guid: 19565f57e22c6cc4f8b82b29317827d3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -259,6 +275,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8379233123694711997, guid: 19565f57e22c6cc4f8b82b29317827d3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600218120734866064, guid: 19565f57e22c6cc4f8b82b29317827d3, type: 3}
+      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
