@@ -2953,6 +2953,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2655061591570032937}
+  - component: {fileID: 1317208367205427129}
   m_Layer: 0
   m_Name: Sample
   m_TagString: Untagged
@@ -2978,6 +2979,21 @@ Transform:
   - {fileID: 496299241053095374}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1317208367205427129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4866180027374222635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e48dc8fd475d8472b9d66b7fd0925278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::floatMotion
+  amplitude: 0.08
+  frequency: 1
+  smoothness: 5
 --- !u!1 &5241765389895680965
 GameObject:
   m_ObjectHideFlags: 0

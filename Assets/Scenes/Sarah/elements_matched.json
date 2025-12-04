@@ -6,9 +6,9 @@
         "elements": [
             {
                 "image_name": "hand.png",
-                "layer": 3,
+                "layer": 2,
                 "section": 1,
-                "interaction": "poke",
+                "interaction": "listen",
                 "scale": 1.5
             },
             {
@@ -22,7 +22,7 @@
                 "image_name": "flower4.png",
                 "layer": 3,
                 "section": 1,
-                "interaction": "poke",
+                "interaction": "shake",
                 "scale": 1
             },
             {
@@ -30,7 +30,7 @@
                 "layer": 1,
                 "section": 1,
                 "interaction": "poke",
-                "scale": 1
+                "scale": 1.5
             },
             {
                 "image_name": "house.png",
@@ -43,33 +43,33 @@
                 "image_name": "fishman.png",
                 "layer": 2,
                 "section": 0,
-                "interaction": "shake",
+                "interaction": "listen",
                 "scale": 1.5
             },
             {
                 "image_name": "fishman2.png",
                 "layer": 2,
                 "section": 0,
-                "interaction": "shake",
+                "interaction": "poke",
                 "scale": 1.5
             },
             {
                 "image_name": "YS_people_3.png",
                 "layer": 2,
                 "section": 0,
-                "interaction": "shake",
+                "interaction": "poke",
                 "scale": 1.5
             },
             {
                 "image_name": "YS_people_5.png",
                 "layer": 2,
                 "section": 0,
-                "interaction": "shake",
+                "interaction": "part",
                 "scale": 1.5
             },
             {
                 "image_name": "YS_YellowSubmarine.png",
-                "layer": 3,
+                "layer": 1,
                 "section": 1,
                 "interaction": "listen",
                 "scale": 2
@@ -92,7 +92,7 @@
                 "image_name": "fish_8.png",
                 "layer": 2,
                 "section": 1,
-                "interaction": "listen",
+                "interaction": "poke",
                 "scale": 1
             },
             {
@@ -106,29 +106,29 @@
                 "image_name": "fish_10.png",
                 "layer": 2,
                 "section": 1,
-                "interaction": "listen",
+                "interaction": "shake",
                 "scale": 1
             },
             {
                 "image_name": "fish_11.png",
                 "layer": 2,
                 "section": 1,
-                "interaction": "listen",
+                "interaction": "poke",
                 "scale": 1
             },
             {
                 "image_name": "group_of_fish.png",
                 "layer": 1,
                 "section": 1,
-                "interaction": "listen",
+                "interaction": "poke",
                 "scale": 1.5
             },
             {
                 "image_name": "wave.png",
                 "layer": 1,
                 "section": 1,
-                "interaction": "listen",
-                "scale": 1.5
+                "interaction": "poke",
+                "scale": 2
             },
             {
                 "image_name": "wave2.png",
@@ -148,7 +148,7 @@
                 "image_name": "YS_Fish_2.png",
                 "layer": 2,
                 "section": 1,
-                "interaction": "listen",
+                "interaction": "poke",
                 "scale": 1
             },
             {
@@ -162,14 +162,14 @@
                 "image_name": "YS_fish_4.png",
                 "layer": 2,
                 "section": 1,
-                "interaction": "listen",
+                "interaction": "shake",
                 "scale": 1
             },
             {
                 "image_name": "YS_fish_5.png",
                 "layer": 2,
                 "section": 1,
-                "interaction": "listen",
+                "interaction": "poke",
                 "scale": 1
             },
             {
@@ -183,7 +183,7 @@
                 "image_name": "YS_fish_7.png",
                 "layer": 2,
                 "section": 1,
-                "interaction": "listen",
+                "interaction": "shake",
                 "scale": 1
             },
             {
@@ -218,8 +218,8 @@
                 "image_name": "yellow_submarine.png",
                 "layer": 1,
                 "section": 1,
-                "interaction": "listen",
-                "scale": 1.5
+                "interaction": "poke",
+                "scale": 2
             }
         ]
     },
@@ -253,14 +253,14 @@
                 "image_name": "George Harrison.png",
                 "layer": 3,
                 "section": 0,
-                "interaction": "shake",
+                "interaction": "poke",
                 "scale": 1.5
             },
             {
                 "image_name": "Paul McCartney.png",
                 "layer": 3,
                 "section": 0,
-                "interaction": "shake",
+                "interaction": "listen",
                 "scale": 1.5
             },
             {
@@ -274,14 +274,14 @@
                 "image_name": "captain.png",
                 "layer": 2,
                 "section": 0,
-                "interaction": "shake",
+                "interaction": "poke",
                 "scale": 1.5
             },
             {
                 "image_name": "YS_People.png",
                 "layer": 2,
                 "section": 0,
-                "interaction": "shake",
+                "interaction": "listen",
                 "scale": 1.5
             },
             {
@@ -302,7 +302,7 @@
                 "image_name": "YS_fish_4.png",
                 "layer": 2,
                 "section": 1,
-                "interaction": "listen",
+                "interaction": "poke",
                 "scale": 1
             },
             {
@@ -323,7 +323,7 @@
                 "image_name": "fish_10.png",
                 "layer": 2,
                 "section": 1,
-                "interaction": "listen",
+                "interaction": "poke",
                 "scale": 1
             },
             {
@@ -332,13 +332,6 @@
                 "section": 1,
                 "interaction": "listen",
                 "scale": 1
-            },
-            {
-                "image_name": "YS_YellowSubmarine.png",
-                "layer": 2,
-                "section": 1,
-                "interaction": "listen",
-                "scale": 1.5
             }
         ]
     },
@@ -351,21 +344,21 @@
                 "image_name": "captain.png",
                 "layer": 2,
                 "section": 0,
-                "interaction": "shake",
+                "interaction": "poke",
                 "scale": 1.5
             },
             {
                 "image_name": "fishman.png",
                 "layer": 2,
                 "section": 0,
-                "interaction": "shake",
+                "interaction": "listen",
                 "scale": 1.5
             },
             {
                 "image_name": "fishman2.png",
                 "layer": 2,
                 "section": 0,
-                "interaction": "shake",
+                "interaction": "poke",
                 "scale": 1.5
             },
             {
@@ -379,14 +372,14 @@
                 "image_name": "YS_people_5.png",
                 "layer": 2,
                 "section": 0,
-                "interaction": "shake",
+                "interaction": "part",
                 "scale": 1.5
             },
             {
                 "image_name": "YS_People.png",
                 "layer": 3,
                 "section": 0,
-                "interaction": "shake",
+                "interaction": "part",
                 "scale": 1.5
             },
             {
@@ -400,7 +393,7 @@
                 "image_name": "YS_people_2.png",
                 "layer": 2,
                 "section": 0,
-                "interaction": "shake",
+                "interaction": "part",
                 "scale": 1.5
             },
             {
@@ -421,28 +414,28 @@
                 "image_name": "YS_Creature_2.png",
                 "layer": 3,
                 "section": 1,
-                "interaction": "shake",
+                "interaction": "poke",
                 "scale": 2
             },
             {
                 "image_name": "YS_creature_3.png",
                 "layer": 3,
                 "section": 1,
-                "interaction": "shake",
+                "interaction": "listen",
                 "scale": 2
             },
             {
                 "image_name": "YS_seaturtle.png",
                 "layer": 3,
                 "section": 1,
-                "interaction": "shake",
+                "interaction": "poke",
                 "scale": 2
             },
             {
                 "image_name": "YS_Fish_2.png",
                 "layer": 2,
                 "section": 1,
-                "interaction": "shake",
+                "interaction": "poke",
                 "scale": 1.5
             },
             {
@@ -456,14 +449,7 @@
                 "image_name": "YS_coral_8.png",
                 "layer": 1,
                 "section": 0,
-                "interaction": "poke",
-                "scale": 1.5
-            },
-            {
-                "image_name": "YS_coral_7.png",
-                "layer": 1,
-                "section": 0,
-                "interaction": "shake",
+                "interaction": "part",
                 "scale": 1.5
             }
         ]
@@ -562,7 +548,7 @@
                 "layer": 3,
                 "section": 0,
                 "interaction": "shake",
-                "scale": 1.5
+                "scale": 2
             },
             {
                 "image_name": "rock_3.png",
@@ -583,7 +569,7 @@
                 "layer": 3,
                 "section": 0,
                 "interaction": "shake",
-                "scale": 1.5
+                "scale": 2
             }
         ]
     },

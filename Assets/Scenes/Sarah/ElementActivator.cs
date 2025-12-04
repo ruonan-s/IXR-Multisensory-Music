@@ -76,6 +76,9 @@ public class ElementActivator : MonoBehaviour
     // Full X range
     private const float FullMinX = -2.5f;
     private const float FullMaxX = 2.5f;
+    //
+    private const float FullMinXLayer1 = -4f;
+    private const float FullMaxXLayer1 = 4f;
 
     // Track spawned assets per layer for collision detection
     private Dictionary<int, List<SpawnedAssetInfo>> spawnedAssetsByLayer;
@@ -203,8 +206,8 @@ public class ElementActivator : MonoBehaviour
                 float layerScaler = 1f;
                 if (element.layer == 1)
                 {
-                    zPosition = 3f;
-                    layerScaler = 1.3f;
+                    zPosition = 5f;
+                    layerScaler = 1.5f;
                 }
                 else if (element.layer == 2)
                 {
@@ -283,7 +286,7 @@ public class ElementActivator : MonoBehaviour
             }
             else
             {
-                candidatePosition = GetRandomPeripheralPosition(sectionMinY, sectionMaxY, zPosition);
+                candidatePosition = GetRandomPeripheralPosition(layer, sectionMinY, sectionMaxY, zPosition);
             }
 
             // Check collision with same-layer assets
@@ -327,23 +330,27 @@ public class ElementActivator : MonoBehaviour
         return new Vector3(x, y, zPosition);
     }
 
-    private Vector3 GetRandomPeripheralPosition(float sectionMinY, float sectionMaxY, float zPosition)
+    private Vector3 GetRandomPeripheralPosition(int layer, float sectionMinY, float sectionMaxY, float zPosition)
     {
         // Peripheral zones: left edge, right edge, or edges within section
         // Randomly choose left or right peripheral zone
         int zoneChoice = UnityEngine.Random.Range(0, 2);
+
+        // Use layer-specific X boundaries
+        float minX = (layer == 1) ? FullMinXLayer1 : FullMinX;
+        float maxX = (layer == 1) ? FullMaxXLayer1 : FullMaxX;
 
         float x, y;
 
         if (zoneChoice == 0)
         {
             // Left peripheral zone
-            x = UnityEngine.Random.Range(FullMinX, PrimaryMinX);
+            x = UnityEngine.Random.Range(minX, PrimaryMinX);
         }
         else
         {
             // Right peripheral zone
-            x = UnityEngine.Random.Range(PrimaryMaxX, FullMaxX);
+            x = UnityEngine.Random.Range(PrimaryMaxX, maxX);
         }
 
         // Y is constrained by section bounds
@@ -393,8 +400,8 @@ public class ElementActivator : MonoBehaviour
         {
             if (layer == 1)
             {
-                minY = 0.7f;
-                maxY = 1.1f;
+                minY = 0.5f;
+                maxY = 0.9f;
             }
             else if (layer == 2)
             {
@@ -411,8 +418,8 @@ public class ElementActivator : MonoBehaviour
         {
             if (layer == 1)
             {
-                minY = 1f;
-                maxY = 1.8f;
+                minY = 1.3f;
+                maxY = 2.5f;
             }
             else if (layer == 2)
             {
@@ -422,7 +429,7 @@ public class ElementActivator : MonoBehaviour
             else
             {
                 minY = 1.5f;
-                maxY = 2.7f;
+                maxY = 2f;
             }
         }
         else
