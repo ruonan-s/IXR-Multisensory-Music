@@ -70,7 +70,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7b53e424588467649992631c9bbddbc8, type: 2}
+  - {fileID: 2100000, guid: af990301164815348a4514f8f3279ef8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f80418e955b9b4ba653dbc4837ce1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalMat: {fileID: 2100000, guid: 7b53e424588467649992631c9bbddbc8, type: 2}
+  originalMat: {fileID: 2100000, guid: af990301164815348a4514f8f3279ef8, type: 2}
   pokeMat: {fileID: -876546973899608171, guid: 3ddb878b2d87604428b69616f3c07b55, type: 3}
   pokeBaseMap: {fileID: 2800000, guid: c5ccd76b88223f446b41c103ac756705, type: 3}
   pokeColor: {r: 0, g: 0.5319171, b: 1, a: 1}
