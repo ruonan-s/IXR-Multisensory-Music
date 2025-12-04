@@ -124,6 +124,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: fish_10
       objectReference: {fileID: 0}
+    - target: {fileID: 4647839456816843177, guid: 540509200d3e3ff4f9cc3c6f2401b983, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3282431530377361716}
+    - target: {fileID: 4647839456816843177, guid: 540509200d3e3ff4f9cc3c6f2401b983, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: changColor
+      objectReference: {fileID: 0}
     - target: {fileID: 5781562713408074797, guid: 540509200d3e3ff4f9cc3c6f2401b983, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -260,6 +268,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 389304fadf73c2445b109b5c7126b7a8, type: 3}
+--- !u!114 &3282431530377361716 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8188243456695281895, guid: 389304fadf73c2445b109b5c7126b7a8, type: 3}
+  m_PrefabInstance: {fileID: 6642798591034397139}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f80418e955b9b4ba653dbc4837ce1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4971983793913551784 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1814949504754207355, guid: 389304fadf73c2445b109b5c7126b7a8, type: 3}

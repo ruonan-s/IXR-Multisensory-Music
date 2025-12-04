@@ -181,6 +181,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d8393927c0eeaa4b96c5d29149a0b5a, type: 3}
+--- !u!114 &3506184795552073941 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4256495863834371148, guid: 2d8393927c0eeaa4b96c5d29149a0b5a, type: 3}
+  m_PrefabInstance: {fileID: 845097904665635993}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f80418e955b9b4ba653dbc4837ce1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6096173528241558252 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6855483137661599349, guid: 2d8393927c0eeaa4b96c5d29149a0b5a, type: 3}
@@ -246,6 +257,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: d5aff548504e5e540948b64189256fb3, type: 2}
+    - target: {fileID: 4157730188998051504, guid: ddb2fedeb77785744988535885e5fe84, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3506184795552073941}
+    - target: {fileID: 4157730188998051504, guid: ddb2fedeb77785744988535885e5fe84, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: changColor
+      objectReference: {fileID: 0}
     - target: {fileID: 7075635655065876365, guid: ddb2fedeb77785744988535885e5fe84, type: 3}
       propertyPath: m_Name
       value: YS_Flower_5

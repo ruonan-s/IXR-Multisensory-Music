@@ -186,6 +186,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 251621108082219792, guid: efe13a52dad1aed4e9f83a91b88e189a, type: 3}
   m_PrefabInstance: {fileID: 4957592949969983220}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6987663930216098674 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2609206887344127366, guid: efe13a52dad1aed4e9f83a91b88e189a, type: 3}
+  m_PrefabInstance: {fileID: 4957592949969983220}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f80418e955b9b4ba653dbc4837ce1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5776703510658623034
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -197,6 +208,14 @@ PrefabInstance:
     - target: {fileID: 1376285784842141887, guid: 19565f57e22c6cc4f8b82b29317827d3, type: 3}
       propertyPath: m_Name
       value: YS_fish_6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231775490863280514, guid: 19565f57e22c6cc4f8b82b29317827d3, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6987663930216098674}
+    - target: {fileID: 5231775490863280514, guid: 19565f57e22c6cc4f8b82b29317827d3, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: changColor
       objectReference: {fileID: 0}
     - target: {fileID: 6352131480978197510, guid: 19565f57e22c6cc4f8b82b29317827d3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'

@@ -181,6 +181,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18bea6d17c64f404ea8385fa35971e24, type: 3}
+--- !u!114 &7450461054451319148 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5803902814344174800, guid: 18bea6d17c64f404ea8385fa35971e24, type: 3}
+  m_PrefabInstance: {fileID: 4030369827685916092}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f80418e955b9b4ba653dbc4837ce1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &9186986867137145732 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5228815372186596920, guid: 18bea6d17c64f404ea8385fa35971e24, type: 3}
@@ -250,6 +261,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 8d838ffdef4ba7e4fa08ce8c230d933b, type: 2}
+    - target: {fileID: 8878272640963235054, guid: 851ebb01155b385479a78cffd4804d93, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7450461054451319148}
+    - target: {fileID: 8878272640963235054, guid: 851ebb01155b385479a78cffd4804d93, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: changColor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 4861113148103367351, guid: 851ebb01155b385479a78cffd4804d93, type: 3}

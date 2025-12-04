@@ -124,6 +124,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: flower4
       objectReference: {fileID: 0}
+    - target: {fileID: 5718256150751292053, guid: 26d07ac4878714147908e9ab96de90cf, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 9035939183599401526}
+    - target: {fileID: 5718256150751292053, guid: 26d07ac4878714147908e9ab96de90cf, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: changColor
+      objectReference: {fileID: 0}
     - target: {fileID: 6910525514917680913, guid: 26d07ac4878714147908e9ab96de90cf, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -273,3 +281,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1266395717488820357, guid: 1f8ce8831e2bfe3499d3de147ac857a5, type: 3}
   m_PrefabInstance: {fileID: 7164726584385606954}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9035939183599401526 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2164017064969482012, guid: 1f8ce8831e2bfe3499d3de147ac857a5, type: 3}
+  m_PrefabInstance: {fileID: 7164726584385606954}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f80418e955b9b4ba653dbc4837ce1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

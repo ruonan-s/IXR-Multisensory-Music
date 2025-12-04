@@ -120,6 +120,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 634582556091885580, guid: 23a052a959be3431caf5b11833971eb8, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6096095220724734378}
+    - target: {fileID: 634582556091885580, guid: 23a052a959be3431caf5b11833971eb8, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: changColor
+      objectReference: {fileID: 0}
     - target: {fileID: 1666748743146203126, guid: 23a052a959be3431caf5b11833971eb8, type: 3}
       propertyPath: m_Name
       value: door
@@ -273,3 +281,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8763531113517525644, guid: f5a62bf6c61cf734a9886bb6fa6f6db9, type: 3}
   m_PrefabInstance: {fileID: 4994508568166239959}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6096095220724734378 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1281732979792582525, guid: f5a62bf6c61cf734a9886bb6fa6f6db9, type: 3}
+  m_PrefabInstance: {fileID: 4994508568166239959}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f80418e955b9b4ba653dbc4837ce1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

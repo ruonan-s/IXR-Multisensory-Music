@@ -124,6 +124,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: e52fac8452707b04896669c40988a983, type: 2}
+    - target: {fileID: 1154526434745736424, guid: 1d17328ca1c63d34cb969559f575a2f2, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8796758289064233936}
+    - target: {fileID: 1154526434745736424, guid: 1d17328ca1c63d34cb969559f575a2f2, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: changColor
+      objectReference: {fileID: 0}
     - target: {fileID: 3231253136481188311, guid: 1d17328ca1c63d34cb969559f575a2f2, type: 3}
       propertyPath: m_LocalScale.x
       value: 5
@@ -273,3 +281,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4833959074936323561, guid: 5b5a09766363e3249998918b649d86a9, type: 3}
   m_PrefabInstance: {fileID: 3687521195243649144}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8796758289064233936 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5276224197152813992, guid: 5b5a09766363e3249998918b649d86a9, type: 3}
+  m_PrefabInstance: {fileID: 3687521195243649144}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f80418e955b9b4ba653dbc4837ce1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

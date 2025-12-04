@@ -120,6 +120,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 732544309287823781, guid: 50aee063ab05d784cb3f2f6ab3de6986, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6557759575095960738}
+    - target: {fileID: 732544309287823781, guid: 50aee063ab05d784cb3f2f6ab3de6986, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: changColor
+      objectReference: {fileID: 0}
     - target: {fileID: 1915939490369475617, guid: 50aee063ab05d784cb3f2f6ab3de6986, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -273,3 +281,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2111735118247993226, guid: 28d24fea7f34af348a47b524c46cee89, type: 3}
   m_PrefabInstance: {fileID: 6473703353864065763}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6557759575095960738 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 204598706263062081, guid: 28d24fea7f34af348a47b524c46cee89, type: 3}
+  m_PrefabInstance: {fileID: 6473703353864065763}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f80418e955b9b4ba653dbc4837ce1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

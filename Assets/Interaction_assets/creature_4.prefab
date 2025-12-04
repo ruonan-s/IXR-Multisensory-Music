@@ -176,6 +176,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: b8c0d82e2deef3240a726fc77a8a7c52, type: 2}
+    - target: {fileID: 3681473656199987949, guid: 44549aa713b602143ab4cce9eb4ca257, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7824478518772566950}
+    - target: {fileID: 3681473656199987949, guid: 44549aa713b602143ab4cce9eb4ca257, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: changColor
+      objectReference: {fileID: 0}
     - target: {fileID: 7536128009710728144, guid: 44549aa713b602143ab4cce9eb4ca257, type: 3}
       propertyPath: m_Name
       value: creature_4
@@ -272,6 +280,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa52136991b0e964fa1d17cc2147ac39, type: 3}
+--- !u!114 &7824478518772566950 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2378538009541065594, guid: aa52136991b0e964fa1d17cc2147ac39, type: 3}
+  m_PrefabInstance: {fileID: 5590201298556858588}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f80418e955b9b4ba653dbc4837ce1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8538991952715638389 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4257297507922499241, guid: aa52136991b0e964fa1d17cc2147ac39, type: 3}

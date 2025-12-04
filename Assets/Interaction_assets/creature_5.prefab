@@ -181,6 +181,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4dc84b79f641194189bedc4c89d443d, type: 3}
+--- !u!114 &5146046426992032067 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8185618756836848649, guid: b4dc84b79f641194189bedc4c89d443d, type: 3}
+  m_PrefabInstance: {fileID: 3959584458223373642}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f80418e955b9b4ba653dbc4837ce1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5823936412441245403 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7359306587020344209, guid: b4dc84b79f641194189bedc4c89d443d, type: 3}
@@ -233,6 +244,14 @@ PrefabInstance:
     - target: {fileID: 2198314648065924495, guid: ff06f66766d89f747898fb3cfa32eb75, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2473601756282714288, guid: ff06f66766d89f747898fb3cfa32eb75, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5146046426992032067}
+    - target: {fileID: 2473601756282714288, guid: ff06f66766d89f747898fb3cfa32eb75, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: changColor
       objectReference: {fileID: 0}
     - target: {fileID: 3670348255327896884, guid: ff06f66766d89f747898fb3cfa32eb75, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'

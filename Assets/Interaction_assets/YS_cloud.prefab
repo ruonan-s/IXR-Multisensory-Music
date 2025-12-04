@@ -124,6 +124,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: YS_cloud
       objectReference: {fileID: 0}
+    - target: {fileID: 5319521936645108790, guid: e7de2e9cf52769041b22157cef20cf56, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3958246250805261584}
+    - target: {fileID: 5319521936645108790, guid: e7de2e9cf52769041b22157cef20cf56, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: changColor
+      objectReference: {fileID: 0}
     - target: {fileID: 6444353098166634930, guid: e7de2e9cf52769041b22157cef20cf56, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -264,6 +272,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3029ccd76b5bd044a8578b76c60f07bd, type: 3}
+--- !u!114 &3958246250805261584 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 932786646904306110, guid: 3029ccd76b5bd044a8578b76c60f07bd, type: 3}
+  m_PrefabInstance: {fileID: 4188188761998331054}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f80418e955b9b4ba653dbc4837ce1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5885739024886289486 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7760044143525615840, guid: 3029ccd76b5bd044a8578b76c60f07bd, type: 3}

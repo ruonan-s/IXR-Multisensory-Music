@@ -164,6 +164,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8041125507692238162, guid: 1adfaabd2d1242f428bb383035b6a7ec, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8974568505207708908}
+    - target: {fileID: 8041125507692238162, guid: 1adfaabd2d1242f428bb383035b6a7ec, type: 3}
+      propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: changColor
+      objectReference: {fileID: 0}
     - target: {fileID: 9163590421951817942, guid: 1adfaabd2d1242f428bb383035b6a7ec, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -265,3 +273,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4873244054004994487, guid: 2e1b9ed2043c3084aa0273527031cb5f, type: 3}
   m_PrefabInstance: {fileID: 6784597047913712825}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8974568505207708908 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2498276854455062613, guid: 2e1b9ed2043c3084aa0273527031cb5f, type: 3}
+  m_PrefabInstance: {fileID: 6784597047913712825}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f80418e955b9b4ba653dbc4837ce1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
