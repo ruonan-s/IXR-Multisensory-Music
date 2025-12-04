@@ -18,15 +18,15 @@ public class Parting : MonoBehaviour
     public float pinchThreshold = 0.8f;
 
     private Vector3[] originalPositions = new Vector3[4];
-    private SpriteRenderer[] corals;
+    private MeshRenderer[] corals;
     private float currentPartAmount = 0f;
     private float targetPartAmount = 0f; // Target parting amount to lerp towards
     private bool isInteracting = false;
-    private SpriteRenderer originalSprite;
+    private MeshRenderer originalMeshRenderer;
 
     void Start()
     {
-        originalSprite = GetComponent<SpriteRenderer>();
+        originalMeshRenderer = GetComponent<MeshRenderer>();
         CreateDuplicates();
         SetupCoralPositions();
 
@@ -38,8 +38,8 @@ public class Parting : MonoBehaviour
 
     void CreateDuplicates()
     {
-        corals = new SpriteRenderer[4];
-        corals[0] = originalSprite;
+        corals = new MeshRenderer[4];
+        corals[0] = originalMeshRenderer;
 
         for (int i = 1; i < 4; i++)
         {
@@ -51,10 +51,16 @@ public class Parting : MonoBehaviour
             duplicate.transform.localRotation = transform.localRotation;
             duplicate.transform.localScale = transform.localScale;
 
-            SpriteRenderer duplicateRenderer = duplicate.AddComponent<SpriteRenderer>();
-            duplicateRenderer.sprite = originalSprite.sprite;
-            duplicateRenderer.color = originalSprite.color;
-            duplicateRenderer.material = originalSprite.material;
+            // Copy mesh filter and renderer from the original
+            MeshFilter originalFilter = originalMeshRenderer.GetComponent<MeshFilter>();
+            if (originalFilter != null)
+            {
+                MeshFilter duplicateFilter = duplicate.AddComponent<MeshFilter>();
+                duplicateFilter.sharedMesh = originalFilter.sharedMesh;
+            }
+
+            MeshRenderer duplicateRenderer = duplicate.AddComponent<MeshRenderer>();
+            duplicateRenderer.sharedMaterials = originalMeshRenderer.sharedMaterials;
 
             corals[i] = duplicateRenderer;
         }
@@ -89,7 +95,6 @@ public class Parting : MonoBehaviour
             float zPos = centerPosition.z + ((i % 2 == 0) ? depthVariation : -depthVariation);
             
             corals[i].transform.localPosition = new Vector3(xPos, centerPosition.y, zPos);
-            corals[i].sortingOrder = i;
         }
     }
     
