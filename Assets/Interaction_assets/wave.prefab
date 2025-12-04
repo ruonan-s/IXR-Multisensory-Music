@@ -13,6 +13,10 @@ PrefabInstance:
       value: wave
       objectReference: {fileID: 0}
     - target: {fileID: 6153403848083793863, guid: 290c7001088bdb940a0ac71c3ebb34c9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153403848083793863, guid: 290c7001088bdb940a0ac71c3ebb34c9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -51,6 +55,10 @@ PrefabInstance:
     - target: {fileID: 6153403848083793863, guid: 290c7001088bdb940a0ac71c3ebb34c9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153403848083793863, guid: 290c7001088bdb940a0ac71c3ebb34c9, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8722067295155060604, guid: 290c7001088bdb940a0ac71c3ebb34c9, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'

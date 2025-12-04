@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 7209ded31eadc9f47b27205bb81d2633, type: 2}
     - target: {fileID: 3408922656168946349, guid: a50de2c3d8f5ed2459b5594d50978c7c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.46
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3408922656168946349, guid: a50de2c3d8f5ed2459b5594d50978c7c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -58,11 +58,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3408922656168946349, guid: a50de2c3d8f5ed2459b5594d50978c7c, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5196702726047022767, guid: a50de2c3d8f5ed2459b5594d50978c7c, type: 3}
       propertyPath: m_Name
-      value: flower_2
+      value: YS_Flower_2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

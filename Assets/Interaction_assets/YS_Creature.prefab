@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 7412657f979d82445898b125c026d8fc, type: 2}
     - target: {fileID: 2651375841662000422, guid: af644588e67c22b409e4ea7545c7ace9, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.92
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2651375841662000422, guid: af644588e67c22b409e4ea7545c7ace9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -58,11 +58,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2651375841662000422, guid: af644588e67c22b409e4ea7545c7ace9, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4871519064813324580, guid: af644588e67c22b409e4ea7545c7ace9, type: 3}
       propertyPath: m_Name
-      value: creature_1
+      value: YS_Creature
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

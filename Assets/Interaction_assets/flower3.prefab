@@ -87,6 +87,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 328bfdd9bf9f09247b3c5a819aadc6a9, type: 2}
     - target: {fileID: 3279839994135629387, guid: 1ff95ef689ff40e43b4c096467c38316, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3279839994135629387, guid: 1ff95ef689ff40e43b4c096467c38316, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -126,9 +130,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3279839994135629387, guid: 1ff95ef689ff40e43b4c096467c38316, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5392178300057541193, guid: 1ff95ef689ff40e43b4c096467c38316, type: 3}
       propertyPath: m_Name
-      value: flower_6
+      value: flower3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

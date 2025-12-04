@@ -95,6 +95,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 01d3545db6c53a24fa367b5cdab868c3, type: 2}
     - target: {fileID: 8354862200399946685, guid: d0f0c96be84f54443bc78d89d40573d7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8354862200399946685, guid: d0f0c96be84f54443bc78d89d40573d7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -133,6 +137,10 @@ PrefabInstance:
     - target: {fileID: 8354862200399946685, guid: d0f0c96be84f54443bc78d89d40573d7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8354862200399946685, guid: d0f0c96be84f54443bc78d89d40573d7, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

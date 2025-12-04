@@ -10,12 +10,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1502477261911530408, guid: 26d07ac4878714147908e9ab96de90cf, type: 3}
       propertyPath: m_Name
-      value: flower_7
+      value: flower4
       objectReference: {fileID: 0}
     - target: {fileID: 6910525514917680913, guid: 26d07ac4878714147908e9ab96de90cf, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 762381888b4a99b4cb1e2b98f9acb651, type: 2}
+    - target: {fileID: 8325281710773866410, guid: 26d07ac4878714147908e9ab96de90cf, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8325281710773866410, guid: 26d07ac4878714147908e9ab96de90cf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -55,6 +59,10 @@ PrefabInstance:
     - target: {fileID: 8325281710773866410, guid: 26d07ac4878714147908e9ab96de90cf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325281710773866410, guid: 26d07ac4878714147908e9ab96de90cf, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

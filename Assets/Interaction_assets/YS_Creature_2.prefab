@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3787194110575547223, guid: 746ee97139e1442439df51e7a3160585, type: 3}
       propertyPath: m_Name
-      value: creature_2
+      value: YS_Creature_2
       objectReference: {fileID: 0}
     - target: {fileID: 6043365034453862229, guid: 746ee97139e1442439df51e7a3160585, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.86
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6043365034453862229, guid: 746ee97139e1442439df51e7a3160585, type: 3}
       propertyPath: m_LocalPosition.x
@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6043365034453862229, guid: 746ee97139e1442439df51e7a3160585, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9200873512114921454, guid: 746ee97139e1442439df51e7a3160585, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'

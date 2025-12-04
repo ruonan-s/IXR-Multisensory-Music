@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: eb085a56497ea4646b6e6b1e8d5f1b25, type: 2}
     - target: {fileID: 2970260408711805267, guid: 78971c66da893544f94debf5e64caea3, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2970260408711805267, guid: 78971c66da893544f94debf5e64caea3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -56,13 +56,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2970260408711805267, guid: 78971c66da893544f94debf5e64caea3, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5650034676430105937, guid: 78971c66da893544f94debf5e64caea3, type: 3}
       propertyPath: m_Name
-      value: group0ffish
+      value: group_of_fish
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 3290347263090395701, guid: 78971c66da893544f94debf5e64caea3, type: 3}
+    - {fileID: 1290002659744256298, guid: 78971c66da893544f94debf5e64caea3, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 77692823349405891, guid: 78971c66da893544f94debf5e64caea3, type: 3}
       insertIndex: -1
