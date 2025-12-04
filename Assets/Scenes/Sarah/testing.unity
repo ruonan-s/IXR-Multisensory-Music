@@ -119,6 +119,123 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &339605497
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2224113960939861478, guid: 7a49910cf83a94579ade7a7eb6634725, type: 3}
+      propertyPath: m_Name
+      value: YS_coral_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7793389093491466884, guid: 7a49910cf83a94579ade7a7eb6634725, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758704531742892516, guid: 7a49910cf83a94579ade7a7eb6634725, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758704531742892516, guid: 7a49910cf83a94579ade7a7eb6634725, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.778
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758704531742892516, guid: 7a49910cf83a94579ade7a7eb6634725, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758704531742892516, guid: 7a49910cf83a94579ade7a7eb6634725, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758704531742892516, guid: 7a49910cf83a94579ade7a7eb6634725, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758704531742892516, guid: 7a49910cf83a94579ade7a7eb6634725, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758704531742892516, guid: 7a49910cf83a94579ade7a7eb6634725, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758704531742892516, guid: 7a49910cf83a94579ade7a7eb6634725, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758704531742892516, guid: 7a49910cf83a94579ade7a7eb6634725, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758704531742892516, guid: 7a49910cf83a94579ade7a7eb6634725, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4126449983066905376, guid: 7a49910cf83a94579ade7a7eb6634725, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 339605501}
+    - targetCorrespondingSourceObject: {fileID: 1013579034287684285, guid: 7a49910cf83a94579ade7a7eb6634725, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 339605500}
+  m_SourcePrefab: {fileID: 100100000, guid: 7a49910cf83a94579ade7a7eb6634725, type: 3}
+--- !u!1 &339605498 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1013579034287684285, guid: 7a49910cf83a94579ade7a7eb6634725, type: 3}
+  m_PrefabInstance: {fileID: 339605497}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &339605499 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4126449983066905376, guid: 7a49910cf83a94579ade7a7eb6634725, type: 3}
+  m_PrefabInstance: {fileID: 339605497}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &339605500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339605498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b9e144e4e664b16ae0386c1e9184f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Parting
+  leftOVRHand: {fileID: 0}
+  rightOVRHand: {fileID: 0}
+  initialSpacing: 0.3
+  overlapAmount: 0.15
+  depthVariation: 0.1
+  maxPartingDistance: 1.5
+  smoothSpeed: 5
+  pinchThreshold: 0.8
+--- !u!114 &339605501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339605499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b9e144e4e664b16ae0386c1e9184f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Parting
+  leftOVRHand: {fileID: 0}
+  rightOVRHand: {fileID: 0}
+  initialSpacing: 0.3
+  overlapAmount: 0.15
+  depthVariation: 0.1
+  maxPartingDistance: 1.5
+  smoothSpeed: 5
+  pinchThreshold: 0.8
 --- !u!1 &458023100
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,7 +252,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &458023102
 Transform:
   m_ObjectHideFlags: 0
@@ -189,7 +306,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &589982442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,7 +488,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!328 &1878949963
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -788,3 +905,4 @@ SceneRoots:
   - {fileID: 458023102}
   - {fileID: 1878949968}
   - {fileID: 589982444}
+  - {fileID: 339605497}
