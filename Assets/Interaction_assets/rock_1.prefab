@@ -205,6 +205,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 596384122236541473, guid: e633c6ac39e5c0645b49bb737783a40c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 825407233459009649, guid: e633c6ac39e5c0645b49bb737783a40c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3449602882813801703, guid: e633c6ac39e5c0645b49bb737783a40c, type: 3}
       propertyPath: m_Name
       value: rock_1
@@ -256,6 +264,10 @@ PrefabInstance:
     - target: {fileID: 5228673717745918181, guid: e633c6ac39e5c0645b49bb737783a40c, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7061558811383715512, guid: e633c6ac39e5c0645b49bb737783a40c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7269287845194381406, guid: e633c6ac39e5c0645b49bb737783a40c, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'

@@ -124,6 +124,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 25d8eee0e0fd15a43ae0594c2f82bdf3, type: 2}
+    - target: {fileID: 1427509891301547541, guid: bfede8aec201c264fa4c21891ce21444, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2.66
+      objectReference: {fileID: 0}
     - target: {fileID: 1829731032509489799, guid: bfede8aec201c264fa4c21891ce21444, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -175,6 +179,14 @@ PrefabInstance:
     - target: {fileID: 4820555955380097978, guid: bfede8aec201c264fa4c21891ce21444, type: 3}
       propertyPath: m_Name
       value: fish_8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6712993917513674396, guid: bfede8aec201c264fa4c21891ce21444, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.060599998
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127898369229687250, guid: bfede8aec201c264fa4c21891ce21444, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.0606
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

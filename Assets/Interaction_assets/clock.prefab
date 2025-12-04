@@ -136,6 +136,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: clock
       objectReference: {fileID: 0}
+    - target: {fileID: 4176346794033078814, guid: 226c0155c439f46a09ac2aa78069ae36, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4176346794033078814, guid: 226c0155c439f46a09ac2aa78069ae36, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6820092268037535260, guid: 226c0155c439f46a09ac2aa78069ae36, type: 3}
       propertyPath: m_Name
       value: clock

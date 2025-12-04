@@ -65,17 +65,17 @@ public class ElementActivator : MonoBehaviour
     private const float SizeThreshold = 2f;
     private const float PrimaryZoneChance = 0.25f;
     private const int MaxPlacementAttempts = 100;
-    private const float CollisionPadding = 0.5f;
+    private const float CollisionPadding = 0.3f;
 
     // Primary zone boundaries (center area)
-    private const float PrimaryMinX = -3f;
-    private const float PrimaryMaxX = 3f;
-    private const float PrimaryMinY = 1f;
-    private const float PrimaryMaxY = 4f;
+    private const float PrimaryMinX = -1f;
+    private const float PrimaryMaxX = 1f;
+    private const float PrimaryMinY = 0.5f;
+    private const float PrimaryMaxY = 2f;
 
     // Full X range
-    private const float FullMinX = -6.5f;
-    private const float FullMaxX = 6.5f;
+    private const float FullMinX = -2.5f;
+    private const float FullMaxX = 2.5f;
 
     // Track spawned assets per layer for collision detection
     private Dictionary<int, List<SpawnedAssetInfo>> spawnedAssetsByLayer;
@@ -203,18 +203,18 @@ public class ElementActivator : MonoBehaviour
                 float layerScaler = 1f;
                 if (element.layer == 1)
                 {
-                    zPosition = 15f;
-                    layerScaler = 2f;
+                    zPosition = 3f;
+                    layerScaler = 1.3f;
                 }
                 else if (element.layer == 2)
                 {
-                    zPosition = 10f;
-                    layerScaler = 1.5f;
+                    zPosition = 2f;
+                    layerScaler = 0.8f;
                 }
                 else if (element.layer == 3)
                 {
-                    zPosition = 5f;
-                    layerScaler = 1f;
+                    zPosition = 1f;
+                    layerScaler = 0.5f;
                 }
 
                 // 2. Get Y boundaries based on section
@@ -393,43 +393,43 @@ public class ElementActivator : MonoBehaviour
         {
             if (layer == 1)
             {
-                minY = -0.5f;
-                maxY = 0f;
+                minY = 0.7f;
+                maxY = 1.1f;
             }
             else if (layer == 2)
             {
-                minY = -0.8f;
-                maxY = -0.3f;
+                minY = 1f;
+                maxY = 1.3f;
             }
             else
             {
-                minY = -1f;
-                maxY = -0.5f;
+                minY = 1.2f;
+                maxY = 1.6f;
             }
         }
         else if (section == 1)
         {
             if (layer == 1)
             {
-                minY = 0f;
-                maxY = 5.5f;
+                minY = 1f;
+                maxY = 1.8f;
             }
             else if (layer == 2)
             {
-                minY = -0.8f;
-                maxY = 5f;
+                minY = 1.2f;
+                maxY = 2.2f;
             }
             else
             {
-                minY = -0.5f;
-                maxY = 4.5f;
+                minY = 1.5f;
+                maxY = 2.7f;
             }
         }
         else
         {
             // Default
-            minY = 0f;
-            maxY = 4f;
+            minY = 1.5f;
+            maxY = 2.7f;
         }
     }
 

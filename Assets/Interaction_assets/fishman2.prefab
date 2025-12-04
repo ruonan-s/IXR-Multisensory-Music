@@ -221,6 +221,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 8721aa4e5fe8e8346a29d0b827b96cba, type: 2}
+    - target: {fileID: 1684329155298686798, guid: 4ec1ab526b9dcc847af09e5dbc6fe0cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4481003740870836499, guid: 4ec1ab526b9dcc847af09e5dbc6fe0cb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -261,9 +265,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5093685351163177015, guid: 4ec1ab526b9dcc847af09e5dbc6fe0cb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.0442
+      objectReference: {fileID: 0}
+    - target: {fileID: 5093685351163177015, guid: 4ec1ab526b9dcc847af09e5dbc6fe0cb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.0854
+      objectReference: {fileID: 0}
     - target: {fileID: 6448927795839014161, guid: 4ec1ab526b9dcc847af09e5dbc6fe0cb, type: 3}
       propertyPath: m_Name
       value: fishman2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7292999624724189049, guid: 4ec1ab526b9dcc847af09e5dbc6fe0cb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.0929
+      objectReference: {fileID: 0}
+    - target: {fileID: 9066922129688861063, guid: 4ec1ab526b9dcc847af09e5dbc6fe0cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144147899325660119, guid: 4ec1ab526b9dcc847af09e5dbc6fe0cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
