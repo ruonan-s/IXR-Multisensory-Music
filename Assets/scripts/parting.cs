@@ -1,7 +1,7 @@
 using UnityEngine;
 using Oculus.Interaction.Input;
 
-public class Parting : MonoBehaviour
+public class parting : MonoBehaviour
 {
     [Header("Hand Data Source References")]
     public Hand leftHand;

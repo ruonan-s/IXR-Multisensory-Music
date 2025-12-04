@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class HandShakeShakerSound : MonoBehaviour
+public class shakeSound : MonoBehaviour
 {
     public Transform leftHand;            // Hand tracking anchor for left hand
     public Transform rightHand;           // Hand tracking anchor for right hand

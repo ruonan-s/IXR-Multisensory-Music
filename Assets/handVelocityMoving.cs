@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class HandTrackingVelocityEnvironment : MonoBehaviour
+public class handVelocityMoving : MonoBehaviour
 {
     public Transform leftHandAnchor;      // Left hand tracking anchor
     public Transform rightHandAnchor;     // Right hand tracking anchor

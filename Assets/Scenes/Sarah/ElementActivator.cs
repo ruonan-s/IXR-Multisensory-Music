@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Video;
 using System.Text;
 using System;
+using Oculus.Interaction.Input;
 
 [System.Serializable]
 public class ScaleData
@@ -41,6 +42,14 @@ public class ElementActivator : MonoBehaviour
     public TextMeshPro timestampText;
     public TextAsset elementJsonFile; 
     public GameObject[] elementPrefabs;
+
+    [Header("Hand References For 'Part' Interaction")]
+    public Hand leftHand;
+    public Hand rightHand;
+    
+    [Header("Anchor References For 'Shake' Interaction")]
+    public Transform leftHandAnchor;
+    public Transform rightHandAnchor;
     
     private GameObject spawnedParent;
     private ElementList[] allParagraphs;
@@ -58,6 +67,7 @@ public class ElementActivator : MonoBehaviour
     void Awake()
     {
         LoadElementData(); 
+        ResolveHandReferences();
     }
 
     void Update()
@@ -182,7 +192,7 @@ public class ElementActivator : MonoBehaviour
             {
                 float zPosition = 0f;
                 if (element.layer == 1) zPosition = 3f;
-                else if (element.layer == 2) zPosition = 15f;
+                else if (element.layer == 2) zPosition = 6f;
                 else if (element.layer == 3) zPosition = 0f; 
                 
                 // 2. Calculate initial position and scale
@@ -196,8 +206,8 @@ public class ElementActivator : MonoBehaviour
                 GameObject newObject = Instantiate(prefab, finalSpawnPosition, Quaternion.identity, spawnedParent.transform);
                 
                 // Apply scale
-                Vector3 scale = Vector3.one * element.scale.scale_multiplier;
-                newObject.transform.localScale = scale;
+                //Vector3 scale = Vector3.one * element.scale.scale_multiplier;
+                //newObject.transform.localScale = scale;
 
                 newObject.name = element.image_name;
                 EnableInteractionScript(newObject, element.interaction);
@@ -259,11 +269,234 @@ public class ElementActivator : MonoBehaviour
         {
             childTransform.gameObject.SetActive(true);
             Debug.Log($"   -> Activated child GameObject: {interactionName}");
+
+            // If this is the "part" interaction, wire up the Parting script's hand references
+            if (interactionName == "part")
+            {
+                parting partingComponent = childTransform.GetComponent<parting>();
+                if (partingComponent != null)
+                {
+                    partingComponent.leftHand = leftHand;
+                    partingComponent.rightHand = rightHand;
+                    Debug.Log("   -> Assigned LeftHand and RightHand to Parting component.");
+                }
+                else
+                {
+                    Debug.LogWarning("   -> 'part' child is active but no Parting component was found on it.");
+                }
+            }
+            else if (interactionName == "shake")
+            {
+                // Navigate to shake > Audio > MovingResponse
+                Transform audioTransform = childTransform.Find("Audio");
+                if (audioTransform == null)
+                {
+                    Debug.LogWarning("   -> 'shake' child does not contain an 'Audio' child.");
+                }
+                else
+                {
+                    // 1) MovingResponse: controls environment movement based on hand velocity
+                    Transform movingResponseTransform = audioTransform.Find("MovingResponse");
+                    if (movingResponseTransform != null)
+                    {
+                        handVelocityMoving movement =
+                            movingResponseTransform.GetComponent<handVelocityMoving>();
+                        if (movement != null)
+                        {
+                            // Ensure we have anchors resolved from the scene
+                            ResolveHandAnchorReferences();
+
+                            movement.leftHandAnchor = leftHandAnchor;
+                            movement.rightHandAnchor = rightHandAnchor;
+
+                            Debug.Log("   -> Assigned anchors to handVelocityMoving on 'MovingResponse'.");
+                        }
+                        else
+                        {
+                            Debug.LogWarning("   -> No handVelocityMoving component found on 'MovingResponse'.");
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogWarning("   -> 'Audio' child does not contain a 'MovingResponse' child.");
+                    }
+
+                    // 2) ShakeSound: shaker audio driven by hand velocity
+                    Transform shakeSoundTransform = FindChildByTrimmedName(audioTransform, "ShakeSound");
+                    // 3) ShakeDrumSound: drum shaker audio driven by hand velocity
+                    Transform shakeDrumSoundTransform = FindChildByTrimmedName(audioTransform, "ShakeDrumSound");
+
+                    // Wire up anchors if the components exist
+                    if (shakeSoundTransform != null)
+                    {
+                        shakeSound shaker = shakeSoundTransform.GetComponent<shakeSound>();
+                        if (shaker != null)
+                        {
+                            ResolveHandAnchorReferences();
+
+                            shaker.leftHand = leftHandAnchor;
+                            shaker.rightHand = rightHandAnchor;
+
+                            Debug.Log("   -> Assigned anchors to shakeSound on 'ShakeSound'.");
+                        }
+                        else
+                        {
+                            Debug.LogWarning("   -> No shakeSound component found on 'ShakeSound'.");
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogWarning("   -> 'Audio' child does not contain a 'ShakeSound' child (by trimmed name).");
+                    }
+
+                    if (shakeDrumSoundTransform != null)
+                    {
+                        shakeSound drumShaker = shakeDrumSoundTransform.GetComponent<shakeSound>();
+                        if (drumShaker != null)
+                        {
+                            ResolveHandAnchorReferences();
+
+                            drumShaker.leftHand = leftHandAnchor;
+                            drumShaker.rightHand = rightHandAnchor;
+
+                            Debug.Log("   -> Assigned anchors to shakeSound on 'ShakeDrumSound'.");
+                        }
+                        else
+                        {
+                            Debug.LogWarning("   -> No shakeSound component found on 'ShakeDrumSound'.");
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogWarning("   -> 'Audio' child does not contain a 'ShakeDrumSound' child (by trimmed name).");
+                    }
+
+                    // Randomly enable either ShakeSound or ShakeDrumSound (but not both)
+                    if (shakeSoundTransform != null || shakeDrumSoundTransform != null)
+                    {
+                        bool useDrum = UnityEngine.Random.value > 0.5f;
+
+                        if (useDrum && shakeDrumSoundTransform != null)
+                        {
+                            shakeDrumSoundTransform.gameObject.SetActive(true);
+                            if (shakeSoundTransform != null) shakeSoundTransform.gameObject.SetActive(false);
+                            Debug.Log("   -> Random choice: enabled 'ShakeDrumSound', disabled 'ShakeSound'.");
+                        }
+                        else if (shakeSoundTransform != null)
+                        {
+                            shakeSoundTransform.gameObject.SetActive(true);
+                            if (shakeDrumSoundTransform != null) shakeDrumSoundTransform.gameObject.SetActive(false);
+                            Debug.Log("   -> Random choice: enabled 'ShakeSound', disabled 'ShakeDrumSound'.");
+                        }
+                    }
+                }
+            }
         }
         else
         {
             Debug.LogWarning($"   -> Could not find child GameObject '{interactionName}' in '{targetObject.name}'.");
         }
+    }
+
+    /// <summary>
+    /// Automatically resolves hand references at runtime so this works even
+    /// when ElementActivator is on a prefab that gets spawned into the scene.
+    /// It looks for scene objects named "OVRLeftHandDataSource" and
+    /// "OVRRightHandDataSource" and grabs a Hand component from them (or their children).
+    /// </summary>
+    private void ResolveHandReferences()
+    {
+        if (leftHand == null)
+        {
+            GameObject leftGO = GameObject.Find("OVRLeftHandDataSource");
+            if (leftGO != null)
+            {
+                leftHand = leftGO.GetComponentInChildren<Hand>();
+                if (leftHand != null)
+                {
+                    Debug.Log("Resolved Left Hand from OVRLeftHandDataSource.");
+                }
+                else
+                {
+                    Debug.LogWarning("Found OVRLeftHandDataSource but no Hand component on it or its children.");
+                }
+            }
+            else
+            {
+                Debug.LogWarning("Could not find GameObject named 'OVRLeftHandDataSource' in the scene.");
+            }
+        }
+
+        if (rightHand == null)
+        {
+            GameObject rightGO = GameObject.Find("OVRRightHandDataSource");
+            if (rightGO != null)
+            {
+                rightHand = rightGO.GetComponentInChildren<Hand>();
+                if (rightHand != null)
+                {
+                    Debug.Log("Resolved Right Hand from OVRRightHandDataSource.");
+                }
+                else
+                {
+                    Debug.LogWarning("Found OVRRightHandDataSource but no Hand component on it or its children.");
+                }
+            }
+            else
+            {
+                Debug.LogWarning("Could not find GameObject named 'OVRRightHandDataSource' in the scene.");
+            }
+        }
+    }
+    
+    private void ResolveHandAnchorReferences()
+    {
+        if (leftHandAnchor == null)
+        {
+            GameObject leftAnchorGO = GameObject.Find("LeftHandAnchor");
+            if (leftAnchorGO != null)
+            {
+                leftHandAnchor = leftAnchorGO.transform;
+                Debug.Log("Resolved LeftHandAnchor from scene.");
+            }
+            else
+            {
+                Debug.LogWarning("Could not find GameObject named 'LeftHandAnchor' in the scene.");
+            }
+        }
+
+        if (rightHandAnchor == null)
+        {
+            GameObject rightAnchorGO = GameObject.Find("RightHandAnchor");
+            if (rightAnchorGO != null)
+            {
+                rightHandAnchor = rightAnchorGO.transform;
+                Debug.Log("Resolved RightHandAnchor from scene.");
+            }
+            else
+            {
+                Debug.LogWarning("Could not find GameObject named 'RightHandAnchor' in the scene.");
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Helper to find a direct child by name, ignoring leading/trailing spaces.
+    /// This is useful when scene / prefab objects accidentally have a space suffix.
+    /// </summary>
+    private Transform FindChildByTrimmedName(Transform parent, string targetName)
+    {
+        if (parent == null) return null;
+
+        foreach (Transform child in parent)
+        {
+            if (child.name.Trim() == targetName)
+            {
+                return child;
+            }
+        }
+
+        return null;
     }
     private void DestroyElements()
     {
