@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Video;
@@ -7,19 +8,13 @@ using System;
 using Oculus.Interaction.Input;
 
 [System.Serializable]
-public class ScaleData
-{
-    public string scale_category;
-    public float scale_multiplier;
-}
-
-[System.Serializable]
 public class ElementData
 {
     public string image_name;
     public int layer;
+    public int section;
     public string interaction;
-    public ScaleData scale;
+    public int scale;
 }
 
 [System.Serializable]
@@ -30,17 +25,24 @@ public class ElementList
     public string end_tms;
     public ElementData[] elements;
 }
+
 [System.Serializable]
 public class ElementListWrapper
 {
-    public ElementList[] paragraphs; 
+    public ElementList[] paragraphs;
+}
+
+public struct SpawnedAssetInfo
+{
+    public Vector3 position;
+    public float radius;
 }
 
 public class ElementActivator : MonoBehaviour
 {
     public VideoPlayer videoPlayer;
     public TextMeshPro timestampText;
-    public TextAsset elementJsonFile; 
+    public TextAsset elementJsonFile;
     public GameObject[] elementPrefabs;
 
     [Header("Hand References For 'Part' Interaction")]
@@ -50,23 +52,37 @@ public class ElementActivator : MonoBehaviour
     [Header("Anchor References For 'Shake' Interaction")]
     public Transform leftHandAnchor;
     public Transform rightHandAnchor;
-    
+
     private GameObject spawnedParent;
     private ElementList[] allParagraphs;
     private ElementList activeParagraph;
-
     private double startTimeInSeconds = 0.0;
     private double endTimeInSeconds = 0.0;
-    
-    private bool hasLoggedStart = false; 
-    private bool hasLoggedEnd = false;    
+    private bool hasLoggedStart = false;
+    private bool hasLoggedEnd = false;
 
-    private const float SpiralIncrement = 1.5f; 
-    private const float CheckRadiusMultiplier = 0.6f;
+    // Zone-based placement constants
+    private const float SizeThreshold = 2f;
+    private const float PrimaryZoneChance = 0.25f;
+    private const int MaxPlacementAttempts = 100;
+    private const float CollisionPadding = 0.5f;
+
+    // Primary zone boundaries (center area)
+    private const float PrimaryMinX = -3f;
+    private const float PrimaryMaxX = 3f;
+    private const float PrimaryMinY = 1f;
+    private const float PrimaryMaxY = 4f;
+
+    // Full X range
+    private const float FullMinX = -6.5f;
+    private const float FullMaxX = 6.5f;
+
+    // Track spawned assets per layer for collision detection
+    private Dictionary<int, List<SpawnedAssetInfo>> spawnedAssetsByLayer;
 
     void Awake()
     {
-        LoadElementData(); 
+        LoadElementData();
         ResolveHandReferences();
     }
 
@@ -75,25 +91,21 @@ public class ElementActivator : MonoBehaviour
         if (videoPlayer != null && videoPlayer.isPlaying)
         {
             double currentTime = videoPlayer.time;
-
             if (timestampText != null)
             {
                 timestampText.text = $"{currentTime:F2} s";
             }
-            
             Debug.Log("Video Time: " + currentTime.ToString("F3") + "s");
             ManageActiveParagraph(currentTime);
-
             if (activeParagraph != null)
             {
-                if (currentTime >= startTimeInSeconds && !hasLoggedStart) 
+                if (currentTime >= startTimeInSeconds && !hasLoggedStart)
                 {
                     Debug.Log("start");
-                    LogElements(); 
+                    LogElements();
                     SpawnElements();
-                    hasLoggedStart = true; // **SET THE FLAG AFTER EXECUTING**
+                    hasLoggedStart = true;
                 }
-                
                 if (currentTime >= endTimeInSeconds && !hasLoggedEnd)
                 {
                     Debug.Log("end");
@@ -113,13 +125,13 @@ public class ElementActivator : MonoBehaviour
             allParagraphs = wrapper.paragraphs;
             if (allParagraphs != null && allParagraphs.Length > 0)
             {
-                activeParagraph = null; 
+                activeParagraph = null;
                 Debug.Log($"Successfully loaded {allParagraphs.Length} paragraphs from JSON.");
             }
             else
             {
                 Debug.LogError("JSON parsing failed or no paragraphs found.");
-            }            
+            }
             Debug.Log($"Successfully loaded data. Start Time: {startTimeInSeconds:F3}s, End Time: {endTimeInSeconds:F3}s");
         }
         else
@@ -132,41 +144,35 @@ public class ElementActivator : MonoBehaviour
     {
         if (activeParagraph != null && activeParagraph.elements != null)
         {
-            var sb = new StringBuilder(); 
+            var sb = new StringBuilder();
             sb.AppendLine("--- All Interactive Elements Activated at " + startTimeInSeconds.ToString("F3") + "s ---");
-            
             foreach (var element in activeParagraph.elements)
             {
                 string detail = string.Format(
-                    "Name: {0,-20} | Layer: {1} | Interaction: {2,-11} | Scale: {3,-12} (x{4:F2})",
+                    "Name: {0,-20} | Layer: {1} | Interaction: {2,-11} | Scale: {3}",
                     element.image_name,
                     element.layer,
                     element.interaction,
-                    element.scale.scale_category,
-                    element.scale.scale_multiplier
+                    element.scale
                 );
                 sb.AppendLine(detail);
             }
-            
             sb.AppendLine("--- End of Dynamically Loaded Element List ---");
-
             Debug.Log(sb.ToString());
         }
     }
-    
+
     private double TimeSpanToSeconds(string timeString)
     {
         string reliableString = timeString.Replace(',', '.');
-
         if (System.TimeSpan.TryParseExact(
-                reliableString, 
-                "hh\\:mm\\:ss\\.fff", 
-                System.Globalization.CultureInfo.InvariantCulture, 
+                reliableString,
+                "hh\\:mm\\:ss\\.fff",
+                System.Globalization.CultureInfo.InvariantCulture,
                 out System.TimeSpan result))
         {
-            return result.TotalSeconds; 
+            return result.TotalSeconds;
         }
-
         Debug.LogError("Failed to parse timestamp: " + timeString);
         return 0.0;
     }
@@ -180,8 +186,10 @@ public class ElementActivator : MonoBehaviour
         }
 
         Debug.Log($"--- Attempting to spawn {activeParagraph.elements.Length} elements at {startTimeInSeconds:F3}s ---");
-
         spawnedParent = new GameObject("Spawned_Elements");
+
+        // Initialize collision tracking dictionary
+        spawnedAssetsByLayer = new Dictionary<int, List<SpawnedAssetInfo>>();
 
         foreach (var element in activeParagraph.elements)
         {
@@ -190,29 +198,54 @@ public class ElementActivator : MonoBehaviour
 
             if (prefab != null)
             {
+                // 1. Determine Z position and layer scaler based on layer
                 float zPosition = 0f;
-                if (element.layer == 1) zPosition = 3f;
-                else if (element.layer == 2) zPosition = 6f;
-                else if (element.layer == 3) zPosition = 0f; 
-                
-                // 2. Calculate initial position and scale
-                Vector3 initialPosition = new Vector3(0f, 0f, zPosition);
-                float checkRadius = SpiralIncrement * element.scale.scale_multiplier * CheckRadiusMultiplier;
+                float layerScaler = 1f;
+                if (element.layer == 1)
+                {
+                    zPosition = 15f;
+                    layerScaler = 2f;
+                }
+                else if (element.layer == 2)
+                {
+                    zPosition = 10f;
+                    layerScaler = 1.5f;
+                }
+                else if (element.layer == 3)
+                {
+                    zPosition = 5f;
+                    layerScaler = 1f;
+                }
 
-                // 3. Find a safe position (using the simplified method)
-                Vector3 finalSpawnPosition = FindSafePosition(initialPosition, checkRadius);
-                
-                // 4. Instantiate at the safe position
-                GameObject newObject = Instantiate(prefab, finalSpawnPosition, Quaternion.identity, spawnedParent.transform);
-                
-                // Apply scale
-                //Vector3 scale = Vector3.one * element.scale.scale_multiplier;
-                //newObject.transform.localScale = scale;
+                // 2. Get Y boundaries based on section
+                float sectionMinY, sectionMaxY;
+                GetSectionBounds(element.section, element.layer, out sectionMinY, out sectionMaxY);
 
+                // 3. Calculate final scale and collision radius
+                float finalScaleMultiplier = element.scale * layerScaler;
+                float assetRadius = finalScaleMultiplier * 0.5f;
+
+                // 4. Find spawn position using zone-based placement
+                Vector3 spawnPosition = FindZoneBasedPosition(
+                    element.layer,
+                    finalScaleMultiplier,
+                    assetRadius,
+                    sectionMinY,
+                    sectionMaxY,
+                    zPosition
+                );
+
+                // 5. Instantiate and apply scale
+                Vector3 originalScale = prefab.transform.localScale;
+                GameObject newObject = Instantiate(prefab, spawnPosition, Quaternion.identity, spawnedParent.transform);
+                newObject.transform.localScale = originalScale * finalScaleMultiplier;
                 newObject.name = element.image_name;
-                EnableInteractionScript(newObject, element.interaction);
 
-                Debug.Log($"[SPAWN SUCCESS] {element.image_name} (Z: {zPosition:F0}, Scale: {element.scale.scale_multiplier:F2}) @ {finalSpawnPosition}");
+                // 6. Record spawned asset for collision tracking
+                RecordSpawnedAsset(element.layer, spawnPosition, assetRadius);
+
+                EnableInteractionScript(newObject, element.interaction);
+                Debug.Log($"[SPAWN SUCCESS] {element.image_name} (Layer: {element.layer}, Section: {element.section}, Scale: {finalScaleMultiplier:F1}) @ {spawnPosition}");
             }
             else
             {
@@ -222,40 +255,182 @@ public class ElementActivator : MonoBehaviour
         Debug.Log("--- Finished attempting element spawning ---");
     }
 
-    private Vector3 FindSafePosition(Vector3 initialPos, float checkRadius)
+    private Vector3 FindZoneBasedPosition(int layer, float finalScale, float assetRadius, float sectionMinY, float sectionMaxY, float zPosition)
     {
-        if (!Physics.CheckSphere(initialPos, checkRadius))
+        bool isLargeAsset = finalScale > SizeThreshold;
+        bool usePrimaryZone = false;
+
+        // Determine zone preference based on asset size
+        if (isLargeAsset)
         {
-            return initialPos;
+            // Large assets (size > 3): 100% peripheral, never in primary
+            usePrimaryZone = false;
+        }
+        else
+        {
+            // Small assets (size <= 3): 70% primary, 30% peripheral
+            usePrimaryZone = UnityEngine.Random.value < PrimaryZoneChance;
         }
 
-        Vector3 currentPos = initialPos;
-        float angle = 0f;
-        float radius = SpiralIncrement;
-        int maxAttempts = 100;
+        Vector3 candidatePosition = Vector3.zero;
+        bool foundValidPosition = false;
 
-        for (int i = 0; i < maxAttempts; i++)
+        for (int attempt = 0; attempt < MaxPlacementAttempts; attempt++)
         {
-            float x = Mathf.Cos(angle) * radius;
-            float y = Mathf.Sin(angle) * radius;
-            currentPos = initialPos + new Vector3(x, y, 0f);
+            if (usePrimaryZone)
+            {
+                candidatePosition = GetRandomPrimaryPosition(sectionMinY, sectionMaxY, zPosition);
+            }
+            else
+            {
+                candidatePosition = GetRandomPeripheralPosition(sectionMinY, sectionMaxY, zPosition);
+            }
 
-            if (!Physics.CheckSphere(currentPos, checkRadius))
+            // Check collision with same-layer assets
+            if (!CheckCollisionWithLayer(layer, candidatePosition, assetRadius))
             {
-                return currentPos; // Found a safe position
-            }
-            angle += 30f * Mathf.Deg2Rad; 
-            if (angle > 360f * Mathf.Deg2Rad) {
-                radius += SpiralIncrement; 
-                angle = 0f;
-            }
-            
-            if (radius > 50f) 
-            {
+                foundValidPosition = true;
                 break;
             }
+
+            // After half attempts, try switching zone type
+            if (attempt == MaxPlacementAttempts / 2)
+            {
+                usePrimaryZone = !usePrimaryZone;
+            }
         }
-        return initialPos; 
+
+        if (!foundValidPosition)
+        {
+            Debug.LogWarning($"Could not find non-overlapping position after {MaxPlacementAttempts} attempts. Using last candidate.");
+        }
+
+        return candidatePosition;
+    }
+
+    private Vector3 GetRandomPrimaryPosition(float sectionMinY, float sectionMaxY, float zPosition)
+    {
+        // Primary zone: center area, but constrained by section Y bounds
+        float effectiveMinY = Mathf.Max(sectionMinY, PrimaryMinY);
+        float effectiveMaxY = Mathf.Min(sectionMaxY, PrimaryMaxY);
+
+        // If section doesn't overlap with primary Y range, use section bounds
+        if (effectiveMinY >= effectiveMaxY)
+        {
+            effectiveMinY = sectionMinY;
+            effectiveMaxY = sectionMaxY;
+        }
+
+        float x = UnityEngine.Random.Range(PrimaryMinX, PrimaryMaxX);
+        float y = UnityEngine.Random.Range(effectiveMinY, effectiveMaxY);
+
+        return new Vector3(x, y, zPosition);
+    }
+
+    private Vector3 GetRandomPeripheralPosition(float sectionMinY, float sectionMaxY, float zPosition)
+    {
+        // Peripheral zones: left edge, right edge, or edges within section
+        // Randomly choose left or right peripheral zone
+        int zoneChoice = UnityEngine.Random.Range(0, 2);
+
+        float x, y;
+
+        if (zoneChoice == 0)
+        {
+            // Left peripheral zone
+            x = UnityEngine.Random.Range(FullMinX, PrimaryMinX);
+        }
+        else
+        {
+            // Right peripheral zone
+            x = UnityEngine.Random.Range(PrimaryMaxX, FullMaxX);
+        }
+
+        // Y is constrained by section bounds
+        y = UnityEngine.Random.Range(sectionMinY, sectionMaxY);
+
+        return new Vector3(x, y, zPosition);
+    }
+
+    private bool CheckCollisionWithLayer(int layer, Vector3 position, float radius)
+    {
+        if (!spawnedAssetsByLayer.ContainsKey(layer))
+        {
+            return false; // No assets in this layer yet
+        }
+
+        foreach (var asset in spawnedAssetsByLayer[layer])
+        {
+            float distance = Vector3.Distance(position, asset.position);
+            float minDistance = radius + asset.radius + CollisionPadding;
+
+            if (distance < minDistance)
+            {
+                return true; // Collision detected
+            }
+        }
+
+        return false; // No collision
+    }
+
+    private void RecordSpawnedAsset(int layer, Vector3 position, float radius)
+    {
+        if (!spawnedAssetsByLayer.ContainsKey(layer))
+        {
+            spawnedAssetsByLayer[layer] = new List<SpawnedAssetInfo>();
+        }
+
+        spawnedAssetsByLayer[layer].Add(new SpawnedAssetInfo
+        {
+            position = position,
+            radius = radius
+        });
+    }
+
+    private void GetSectionBounds(int section, int layer, out float minY, out float maxY)
+    {
+        if (section == 0)
+        {
+            if (layer == 1)
+            {
+                minY = -0.5f;
+                maxY = 0f;
+            }
+            else if (layer == 2)
+            {
+                minY = -0.8f;
+                maxY = -0.3f;
+            }
+            else
+            {
+                minY = -1f;
+                maxY = -0.5f;
+            }
+        }
+        else if (section == 1)
+        {
+            if (layer == 1)
+            {
+                minY = 0f;
+                maxY = 5.5f;
+            }
+            else if (layer == 2)
+            {
+                minY = -0.8f;
+                maxY = 5f;
+            }
+            else
+            {
+                minY = -0.5f;
+                maxY = 4.5f;
+            }
+        }
+        else
+        {
+            // Default
+            minY = 0f;
+            maxY = 4f;
+        }
     }
 
     private void EnableInteractionScript(GameObject targetObject, string interactionName)
@@ -498,36 +673,38 @@ public class ElementActivator : MonoBehaviour
 
         return null;
     }
+
     private void DestroyElements()
     {
         if (spawnedParent != null)
         {
             Destroy(spawnedParent);
-            spawnedParent = null; // Clear the reference for good measure
+            spawnedParent = null;
             Debug.Log("--- All Spawned Elements Destroyed! ---");
+        }
+
+        // Clear collision tracking
+        if (spawnedAssetsByLayer != null)
+        {
+            spawnedAssetsByLayer.Clear();
         }
     }
 
     private void ManageActiveParagraph(double currentTime)
     {
         if (allParagraphs == null) return;
-        
-        // Find the paragraph whose time window contains the current video time
-        ElementList nextActive = allParagraphs.FirstOrDefault(p => 
-            currentTime >= TimeSpanToSeconds(p.start_tms) && 
+
+        ElementList nextActive = allParagraphs.FirstOrDefault(p =>
+            currentTime >= TimeSpanToSeconds(p.start_tms) &&
             currentTime < TimeSpanToSeconds(p.end_tms));
 
         if (nextActive != null && nextActive != activeParagraph)
         {
             Debug.Log($"--- New Paragraph Activated: {nextActive.paragraph} ---");
-
-            DestroyElements(); 
-            
+            DestroyElements();
             activeParagraph = nextActive;
             startTimeInSeconds = TimeSpanToSeconds(activeParagraph.start_tms);
             endTimeInSeconds = TimeSpanToSeconds(activeParagraph.end_tms);
-
-            // Reset flags for the new paragraph
             hasLoggedStart = false;
             hasLoggedEnd = false;
         }
