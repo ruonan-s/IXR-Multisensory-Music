@@ -18,15 +18,15 @@ public class Parting : MonoBehaviour
     public float pinchThreshold = 0.8f;
 
     private Vector3[] originalPositions = new Vector3[4];
-    private MeshRenderer[] corals;
+    private SpriteRenderer[] corals;
     private float currentPartAmount = 0f;
     private float targetPartAmount = 0f; // Target parting amount to lerp towards
     private bool isInteracting = false;
-    private MeshRenderer originalMesh;
+    private SpriteRenderer originalSprite;
 
     void Start()
     {
-        originalMesh = GetComponent<MeshRenderer>();
+        originalSprite = GetComponent<SpriteRenderer>();
         CreateDuplicates();
         SetupCoralPositions();
 
@@ -38,11 +38,8 @@ public class Parting : MonoBehaviour
 
     void CreateDuplicates()
     {
-        corals = new MeshRenderer[4];
-        corals[0] = originalMesh;
-
-        // Get the original mesh filter to copy mesh from
-        MeshFilter originalMeshFilter = GetComponent<MeshFilter>();
+        corals = new SpriteRenderer[4];
+        corals[0] = originalSprite;
 
         for (int i = 1; i < 4; i++)
         {
@@ -54,24 +51,10 @@ public class Parting : MonoBehaviour
             duplicate.transform.localRotation = transform.localRotation;
             duplicate.transform.localScale = transform.localScale;
 
-            // Add MeshFilter and copy mesh
-            MeshFilter duplicateMeshFilter = duplicate.AddComponent<MeshFilter>();
-            if (originalMeshFilter != null && originalMeshFilter.sharedMesh != null)
-            {
-                duplicateMeshFilter.sharedMesh = originalMeshFilter.sharedMesh;
-            }
-
-            // Add MeshRenderer and copy material
-            MeshRenderer duplicateRenderer = duplicate.AddComponent<MeshRenderer>();
-            if (originalMesh != null)
-            {
-                duplicateRenderer.material = originalMesh.material;
-                // Copy material color if it exists
-                if (originalMesh.material.HasProperty("_Color"))
-                {
-                    duplicateRenderer.material.color = originalMesh.material.color;
-                }
-            }
+            SpriteRenderer duplicateRenderer = duplicate.AddComponent<SpriteRenderer>();
+            duplicateRenderer.sprite = originalSprite.sprite;
+            duplicateRenderer.color = originalSprite.color;
+            duplicateRenderer.material = originalSprite.material;
 
             corals[i] = duplicateRenderer;
         }
@@ -106,6 +89,7 @@ public class Parting : MonoBehaviour
             float zPos = centerPosition.z + ((i % 2 == 0) ? depthVariation : -depthVariation);
             
             corals[i].transform.localPosition = new Vector3(xPos, centerPosition.y, zPos);
+            corals[i].sortingOrder = i;
         }
     }
     
