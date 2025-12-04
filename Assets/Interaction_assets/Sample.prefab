@@ -431,7 +431,7 @@ GameObject:
   - component: {fileID: 4529038381062907600}
   - component: {fileID: 2657234736874533995}
   m_Layer: 4
-  m_Name: GrabListenInteractable
+  m_Name: listen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2018,7 +2018,7 @@ GameObject:
   - component: {fileID: 7893709482051472621}
   - component: {fileID: 1732382017625132054}
   m_Layer: 4
-  m_Name: PokeInteractable
+  m_Name: poke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
