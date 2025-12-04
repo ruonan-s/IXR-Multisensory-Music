@@ -31,10 +31,7 @@ EditorBuildSettings:
     guid: 357509a3f00dc4c30b956694917e0e49
   - enabled: 1
     path: Assets/Scenes/Sarah/Final_version.unity
-    guid: fb69dac6272a28344bc7ac4ad8529c6b
-  - enabled: 0
-    path: Assets/Scenes/Parting.unity
-    guid: dd364819fb6cb4d2bb2cadae21ea8145
+    guid: add4253fc5309445fa5ff8bf7d47dc16
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 9dcd96982ad4d4c47a74c0e189d57d58, type: 2}
