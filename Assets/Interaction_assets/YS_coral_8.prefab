@@ -198,6 +198,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: YS_coral_8
       objectReference: {fileID: 0}
+    - target: {fileID: 4093086017739205320, guid: 19a637342e36ac843b483fdaf219ec68, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 06e9fa5446966ce4b90ffb65f4e2eda1, type: 2}
     - target: {fileID: 6321685559999443722, guid: 19a637342e36ac843b483fdaf219ec68, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

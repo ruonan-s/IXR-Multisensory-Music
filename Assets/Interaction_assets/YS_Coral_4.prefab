@@ -194,10 +194,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2780000925636927493, guid: bdcc5a46599913c4db01ccd356b2e11f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.071
+      objectReference: {fileID: 0}
     - target: {fileID: 3482117663639373530, guid: bdcc5a46599913c4db01ccd356b2e11f, type: 3}
       propertyPath: m_Name
       value: YS_Coral_4
       objectReference: {fileID: 0}
+    - target: {fileID: 4068101323654335258, guid: bdcc5a46599913c4db01ccd356b2e11f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9233e97f2d90b6140bd24a3393b8d658, type: 2}
     - target: {fileID: 6269713339052167896, guid: bdcc5a46599913c4db01ccd356b2e11f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

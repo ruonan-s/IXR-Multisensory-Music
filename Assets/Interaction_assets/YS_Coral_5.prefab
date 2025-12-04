@@ -120,6 +120,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 425548041881652709, guid: 2dae84d2f62f27c44869217941e66e5b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 42fb2c1e79d294b4d9e6a31abffdb344, type: 2}
     - target: {fileID: 991322678182281253, guid: 2dae84d2f62f27c44869217941e66e5b, type: 3}
       propertyPath: m_Name
       value: YS_Coral_5
