@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 5a44fc1383485534a9342292a67cd747, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: f268a38da8909094b8485bbc8ede530b, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -7925,7 +7925,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1081876762}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: d35649854fb71e14ab7eb3b6aaae1485, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 837ea1b2fabcd4cf6bde6c25540c8885, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -13585,6 +13585,10 @@ PrefabInstance:
     - target: {fileID: 3482117663639373530, guid: bdcc5a46599913c4db01ccd356b2e11f, type: 3}
       propertyPath: m_Name
       value: YS_coral_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3482117663639373530, guid: bdcc5a46599913c4db01ccd356b2e11f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6269713339052167896, guid: bdcc5a46599913c4db01ccd356b2e11f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -56658,7 +56662,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2037080, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: m_ClearFlags
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2037080, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: m_BackGroundColor.a

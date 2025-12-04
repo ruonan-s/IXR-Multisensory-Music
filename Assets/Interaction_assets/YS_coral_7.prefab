@@ -128,6 +128,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: YS_coral_7
       objectReference: {fileID: 0}
+    - target: {fileID: 4669483361161993192, guid: d1b72c32b009e404db224abf12d32e9b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5846989405679820840, guid: d1b72c32b009e404db224abf12d32e9b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
