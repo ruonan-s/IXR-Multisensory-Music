@@ -3863,24 +3863,6 @@ MonoBehaviour:
   _loop: 0
   _chanceToPlay: 100
   _playOnStart: 0
---- !u!114 &1115640441432656163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3606403655760955678}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5e48d93b64a9ae4f9fd5a728c8f51af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _renderers:
-  - {fileID: 0}
-  _vectorProperties: []
-  _colorProperties: []
-  _floatProperties: []
-  _updateEveryFrame: 1
 --- !u!23 &1203531816602505686
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13931,8 +13913,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66a0b3d62f6984fcb9690b053a6d9145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  leftHand: {fileID: 0}
-  rightHand: {fileID: 0}
+  leftHand: {fileID: 7079690333082418971}
+  rightHand: {fileID: 7079690333082418971}
   audioSource: {fileID: 8710031106524140068}
   shakeSensitivity: 1.2
   volumeMultiplier: 1.4
@@ -14072,7 +14054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactableView: {fileID: 7721690245379349203}
-  _editor: {fileID: 1115640441432656163}
+  _editor: {fileID: 0}
   _colorShaderPropertyName: _Color
   _normalColorState:
     Color: {r: 0.83137256, g: 0.83137256, b: 0.83137256, a: 1}
@@ -24298,7 +24280,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4876722941482288350}
   - component: {fileID: 2534162120517621792}
-  - component: {fileID: 1115640441432656163}
   - component: {fileID: 7721690245379349203}
   m_Layer: 4
   m_Name: Visuals
@@ -34489,8 +34470,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66a0b3d62f6984fcb9690b053a6d9145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  leftHand: {fileID: 0}
-  rightHand: {fileID: 0}
+  leftHand: {fileID: 7079690333082418973}
+  rightHand: {fileID: 7079690333082418973}
   audioSource: {fileID: 8546015192789840692}
   shakeSensitivity: 1.2
   volumeMultiplier: 1.4
@@ -34708,8 +34689,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e79da72d04f14768a805a0e91f497c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  leftHandAnchor: {fileID: 0}
-  rightHandAnchor: {fileID: 0}
+  leftHandAnchor: {fileID: 7079690333082418973}
+  rightHandAnchor: {fileID: 7079690333082418971}
   environmentObject: {fileID: 0}
   movementScale: 1
 --- !u!114 &5629177691575448324
