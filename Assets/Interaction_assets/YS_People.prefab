@@ -26,11 +26,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8071090699451145673, guid: bab9b3b0191f52c45b5d58fcb6f44049, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.97
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8071090699451145673, guid: bab9b3b0191f52c45b5d58fcb6f44049, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.18
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8071090699451145673, guid: bab9b3b0191f52c45b5d58fcb6f44049, type: 3}
       propertyPath: m_LocalPosition.z
@@ -88,15 +88,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3994802567584207259, guid: b3112a14e2b0a1b449cd89cc4554fc55, type: 3}
       propertyPath: m_Name
-      value: people_1
+      value: YS_People
       objectReference: {fileID: 0}
     - target: {fileID: 4089704400684901792, guid: b3112a14e2b0a1b449cd89cc4554fc55, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.1722
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4089704400684901792, guid: b3112a14e2b0a1b449cd89cc4554fc55, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0141
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4089704400684901792, guid: b3112a14e2b0a1b449cd89cc4554fc55, type: 3}
       propertyPath: m_LocalPosition.z
@@ -158,6 +158,7 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 7565930597591297504, guid: b3112a14e2b0a1b449cd89cc4554fc55, type: 3}
     - {fileID: 8811257536187087660, guid: b3112a14e2b0a1b449cd89cc4554fc55, type: 3}
+    - {fileID: 1317436249561118533, guid: b3112a14e2b0a1b449cd89cc4554fc55, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8650449965631083529, guid: b3112a14e2b0a1b449cd89cc4554fc55, type: 3}
       insertIndex: -1

@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: monster
       objectReference: {fileID: 0}
+    - target: {fileID: 1626512499108277074, guid: 705b9e8940bdce043886fb7f9be6182e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -84,7 +88,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4172726309451248967, guid: 05d3ff8803bdc8f418a115b1d425512e, type: 3}
       propertyPath: m_Name
-      value: monster
+      value: YS_monster
       objectReference: {fileID: 0}
     - target: {fileID: 6825215099966955845, guid: 05d3ff8803bdc8f418a115b1d425512e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -134,6 +138,7 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 4058192200391567523, guid: 05d3ff8803bdc8f418a115b1d425512e, type: 3}
     - {fileID: 4925620989360668334, guid: 05d3ff8803bdc8f418a115b1d425512e, type: 3}
+    - {fileID: 8784934366201620476, guid: 05d3ff8803bdc8f418a115b1d425512e, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8544579548842520789, guid: 05d3ff8803bdc8f418a115b1d425512e, type: 3}
       insertIndex: -1

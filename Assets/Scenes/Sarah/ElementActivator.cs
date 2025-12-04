@@ -252,26 +252,17 @@ public class ElementActivator : MonoBehaviour
     {
         if (string.IsNullOrEmpty(interactionName)) return;
 
-
-        Type scriptType = Type.GetType(interactionName);
-
-        if (scriptType != null)
+        // Find child GameObject with the interaction name
+        Transform childTransform = targetObject.transform.Find(interactionName);
+        
+        if (childTransform != null)
         {
-            MonoBehaviour scriptComponent = targetObject.GetComponent(scriptType) as MonoBehaviour;
-
-            if (scriptComponent != null)
-            {
-                scriptComponent.enabled = true;
-                Debug.Log($"   -> Enabled script: {interactionName}");
-            }
-            else
-            {
-                Debug.LogWarning($"   -> Could not find script component '{interactionName}' on object '{targetObject.name}'.");
-            }
+            childTransform.gameObject.SetActive(true);
+            Debug.Log($"   -> Activated child GameObject: {interactionName}");
         }
         else
         {
-            Debug.LogWarning($"   -> Script type '{interactionName}' not found. Check class naming.");
+            Debug.LogWarning($"   -> Could not find child GameObject '{interactionName}' in '{targetObject.name}'.");
         }
     }
     private void DestroyElements()
