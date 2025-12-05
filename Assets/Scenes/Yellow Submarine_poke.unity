@@ -1814,6 +1814,7 @@ GameObject:
   m_Component:
   - component: {fileID: 784403796}
   - component: {fileID: 784403797}
+  - component: {fileID: 784403798}
   m_Layer: 0
   m_Name: SkyboxFromLastFrame
   m_TagString: Untagged
@@ -1848,6 +1849,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7fd9178c74719f4dbb3e57a69e9cc48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainVideo: {fileID: 1284935361}
+  colorSamplerVideo: {fileID: 2057309734}
+  videoRT: {fileID: 8400000, guid: 835a93c87c3bad14986eb07719a92f58, type: 2}
+  colorLerpSpeed: 2
+--- !u!114 &784403798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784403795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd04dd7735424bf8891bd01196189a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SkyboxFromVideo
   mainVideo: {fileID: 1284935361}
   colorSamplerVideo: {fileID: 2057309734}
   videoRT: {fileID: 8400000, guid: 835a93c87c3bad14986eb07719a92f58, type: 2}
@@ -3355,7 +3372,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1284935356}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: f587448bc528c1a47ae3447a58535f7a, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 837ea1b2fabcd4cf6bde6c25540c8885, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -11129,7 +11146,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2057309733}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: f587448bc528c1a47ae3447a58535f7a, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 837ea1b2fabcd4cf6bde6c25540c8885, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 833047491}
